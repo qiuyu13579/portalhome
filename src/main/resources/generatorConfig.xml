@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+  <classPathEntry location="D:/jar/woego_mavent/com/sqlserver/sqljdbc4.jar" />
+  <!--  
+  <classPathEntry location="D:/jar/woego_mavent/com/oracle/ojdbc6/11.2.0.4.0/ojdbc6-11.2.0.4.0.jar" />
+  <classPathEntry location="E:/maven/Java/repository/oracle/ojdbc6/11.2.0.3.0/ojdbc6-11.2.0.3.0.jar" />
+  <classPathEntry location="E:/maven/Java/repository/oracle/ojdbc6/11.2.0.3.0/ojdbc6-11.2.0.3.0.jar" />
+  -->
+	
+  <context id="oracleTables" targetRuntime="MyBatis3">
+    <property name="javaFileEncoding" value="UTF-8"/>
+    <property name="DBType" value="sqlserver"/>
+    <!-- 
+    <property name="DBType" value="oracle"/>
+     -->
+    <commentGenerator>
+      <property name="suppressAllComments" value="true"/>
+    </commentGenerator>
+    <jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+                    connectionURL="jdbc:sqlserver://localhost:1433;DatabaseName=master"
+                    userId="sa"
+                    password="123456">
+    </jdbcConnection>
+    <!-- 
+    <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+                    connectionURL="jdbc:oracle:thin:@132.37.2.163:8899:devdb1"
+                    userId="DEVWFAPP1O"
+                    password="DEVWFAPP1O">
+    </jdbcConnection>
+	-->
+
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+
+    <javaModelGenerator targetPackage="com.ai.portalhome.dao.model" targetProject="portalhome/src/main/java">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <sqlMapGenerator targetPackage="sqlMapper.common"  targetProject="portalhome/src/main/resources">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.ai.portalhome.dao.mapper"  targetProject="portalhome/src/main/java">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+
+    <table schema="dbo" tableName="T_CELL_GROUP" domainObjectName="TCellGroup" enableDeleteByExample="false" >
+      <property name="ignoreQualifiersAtRuntime" value="true"/>
+    </table>
+
+  </context>
+</generatorConfiguration>

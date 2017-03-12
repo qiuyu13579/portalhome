@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd" default-lazy-init="false">
+
+  <!-- 填写应用名、应用版本号、应用负责人（邮箱前缀）、运行环境（develop/test/product） -->
+  <dubbo:application name="${application.name}" version="${application.version}" owner="${application.owner}" environment="${application.environment}" />
+  <!-- 使用woegoRegistry标识注册中心，默认dubbo协议，连接注册中心超时时间5秒，会话超时时间60秒，check="true"注册中心不存在报错 -->
+  <dubbo:registry id="woegoRegistry" address="${dubbo.registry.address}" protocol="dubbo" timeout="5000" session="60000" check="true" />
+  <!-- dubbo消费者默认超时时间6秒，check="false"不检查服务提供者是否存在，retries="0"不重试，actives="10"每个服务消费者每服务每方法最大并发调用数10 -->
+  <dubbo:consumer timeout="6000" check="false" retries="0" actives="10"/>
+
+  <!-- 是否启用dubbo监控dubbo-monitor -->
+  <dubbo:monitor protocol="dubbo" address="${dubbo.monitor.address}" />
+
+  <!-- 导入consumer配置文件 -->
+  <import resource="classpath:dubbo/client/*.xml" />
+</beans>

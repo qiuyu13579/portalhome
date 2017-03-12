@@ -1,0 +1,46 @@
+﻿<h2>已选菜单</h2>
+<div class="role_search">
+     <table width="100%" border="0" class="table">
+       <tbody>
+           <tr>
+             <td width="20%" class="R">菜单名称：</td>
+             <td><input type="text" id="menuName_seled" class="form-control per90"></td>
+             <td ><button  class="btn btn-default"  onclick="roleMenuManage.initDataList(1,10);">
+             <i class="glyphicon glyphicon-search"></i>查询</button>
+             </td>
+           </tr>
+
+       </tbody>
+     </table>
+ </div>
+ <table class="table table-bordered table-striped table-hover table_center table_th_center font12 ">
+     <thead>
+     	<tr>
+			<th>菜单编码</th>
+			<th>菜单名称</th>
+			<th>展示顺序</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="obj : ${pageInfo.list}">
+			<td th:text="${obj.menu.menuId}"></td>
+			<td th:text="${obj.menu.menuName}"></td>
+			<td th:text="${obj.menu.menuOrder}"></td>
+			<td class="linkBlue2"><a href="javaScript:;"
+				th:onclick="'javascript:roleMenuManage.confirmDelStatus('+${obj.rmId}+');'">删除</a></td>
+		</tr>
+	</tbody>
+ </table>
+ 
+ 
+ <!-- 分页 -->
+<div class="pagerBar">
+	<script>
+	function pagerClick(index) {
+		roleMenuManage.initDataList(index,10);
+	}
+	</script>
+	<div th:include="~{admin/common/pager :: pager}"></div>
+</div>
+<!-- pagerBar end-->

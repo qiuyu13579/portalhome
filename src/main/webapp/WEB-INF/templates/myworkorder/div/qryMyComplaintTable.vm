@@ -1,0 +1,64 @@
+#set($layout="layout/div/layout.vm")
+
+<section class="queryForm" style="border: none;padding: 0px; padding-bottom: 8px;">
+	    <table class="query" width="100%" border="0" cellspacing="0" cellpadding="0">
+	        <tr>
+	            <td class="Hint">省份选择：</td>
+	            <td>
+	                <select class="form-control dateStyle">
+	                    <option>全国</option>
+	                    <option>北京</option>
+		                <option>广西</option>
+		                <option>广东</option>
+	                </select>
+	            </td>
+	            <td ><button type="button" class="btn btn-primary" onclick="qryComplaintInfoTable()" >查询</button></td>
+	        </tr>
+	    </table>
+</section>
+                            
+<div id="refund-1" class="tab-pane active">
+    <table width="100%" border="0" class="table table-bordered table-striped table-hover table_center">
+        <tr>
+            <th>投诉编号</th>
+            <th>投诉类型</th>
+            <th>订单编号</th>
+            <th>投诉对象</th>
+            <th colspan= "3" >投诉内容</th>
+            <th>投诉时间</th>
+            <th>距离工单超时</th>
+            <th>处理状态</th>
+            <th>操作</th>
+        </tr>
+        #if(${pageInfo.total}==0)
+			<tr><td colspan="11">没有数据</td></tr>
+    	#else
+    		<tbody id="fenhuo_table_list">
+    		#foreach($complaintInfo in $pageInfo.list)
+                <tr> 
+                    <td>$!{complaintInfo.complaintInfoId}</td>
+                    <td>$!{complaintInfo.complaintType}</td>
+                    <td>$!{complaintInfo.complaintType}</td>
+ 					<td>$!{complaintInfo.complaintStaffName}</td> 
+                    <td colspan= "3">$!{complaintInfo.complaintText}</td>
+                    <td>$!DateTool.format('yyyy-MM-dd HH:mm:ss', $!{complaintInfo.createTime})</td>
+                    <td></td>
+                    <td>$!{complaintInfo.taskStatus}</td>
+                    <td><a href="#" id="$!{complaintInfo.complaintInfoId}" onclick="showComplaintByCreater(this)">查看</a></td>
+                </tr>
+           #end
+           </tbody>
+    	#end
+    </table>
+</div>
+<div class="pagerBar">
+	<script>
+		function pagerClick(index){ 
+			qryComplaintCollectTab(index);
+		}
+	</script>
+	#parse("/common/pager.vm")
+</div>
+<div class="">
+    <button type="button" class="btn btn-primary" onclick="wantToComplaintInfo()" >我要投诉</button>
+</div>

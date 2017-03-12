@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+
+    <!-- 引入模板中head定义的公共js和css等内容 -->
+    <script th:replace="~{admin/common/linkData :: linkData}"></script>
+
+	<script th:src="@{/js-busi/admin/sys/carData.js?v=${JS_VERSION}}"></script>
+
+</head>
+<body>
+
+	<div class="admin_content overflow-hidden">
+
+		<input type="hidden" id="carId" th:value="${car.carId}"/>
+		<div class="tabBar">
+			<ul class="nav nav-tabs">
+				<li class="active" name="tabBar01"><a href="#" th:text="'【'+${car.carName}+'】配置图片列表'">图片列表</a></li>
+			</ul>
+			<div class="tab-content listTableCon">
+				<!-- 图片列表 -->
+				<div class="tabBar01 tab-pane active">
+				
+					<table width="100%" border="0" class="table mt20">
+	                  <tbody>
+	                      <tr>
+	                        <td width="20%" class="R">图片名称:</td>
+	                        <td width="20%" class="L"><input type="text" id="carTitle_sel" class="form-control per90"></td>
+	                        <td width="40%" class="C">
+	                        	<button class="btn btn-default"  onclick="carDataManage.initDataList(1,10);">
+	                			<i class="glyphicon glyphicon-search"></i>查询</button>
+	                		</td>
+	                        <td width="20%" class="R">
+	                        	<button class="btn btn-default btn-sm"
+									th:onclick="'javascript:carDataManage.redictCarUrl('+${car.carId}+');'">
+									<i class="glyphicon glyphicon-share-alt"></i>返回
+								</button>
+	                		</td>
+	                      </tr>
+	                  </tbody>
+	                </table>
+				
+					<!-- 展示数据区域 -->
+					<div id="data_list"></div>
+					
+				</div>
+				<!-- 图片列表 end-->
+
+			</div>
+		</div>
+	</div>
+
+	<!-- 新增图片 弹出框 -->
+    <div th:replace="~{admin/car/ject :: ject}"></div>
+
+</body>
+</html>

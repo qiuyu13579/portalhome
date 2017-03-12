@@ -1,0 +1,67 @@
+﻿<!-- 编辑框 -->
+<table class="query" width="100%" border="0" cellspacing="0"
+	cellpadding="0">
+	<tbody>
+	
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>文章编码：
+			</td>
+			<td><input id="artId" class=" form-control input_w300"
+				type="text" maxlength="15" th:value="${info.artId}" disabled="disabled"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>文章分组名称：
+			</td>
+			<td><input id="artName" class=" form-control input_w300"
+				type="text" maxlength="20" th:value="${info.artName}"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>文章分组描述：
+			</td>
+			<td><input id="artDesc" class=" form-control input_w300"
+				type="text" maxlength="40" th:value="${info.artDesc}"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>文章分类：
+			</td>
+			<td><input id="artClass" class=" form-control input_w300"
+				type="text" maxlength="40" th:value="${info.artClass}"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>文章来源：
+			</td>
+			<td><input id="artSource" class=" form-control input_w300"
+				type="text" maxlength="40" th:value="${info.artSource}"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>文章标签：
+			</td>
+			<td><input id="artLabel" class=" form-control input_w300"
+				type="text" maxlength="40" th:value="${info.artLabel}"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>录入文章：
+			</td>
+			<td><input id="artUrl" class=" form-control input_w300"
+				type="text" maxlength="40" th:value="${info.artUrl}"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td colspan="10">
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary"
+						onclick="articleManage.edit();" id="submitBut">保存</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal"
+						id="closeBut">关闭</button>
+				</div>
+			</td>
+		</tr>
+
+	</tbody>
+</table>

@@ -1,0 +1,53 @@
+﻿<!-- 数据展示区 -->
+<table
+	class="table table-bordered table-striped table-hover table_center table_th_center font12 ">
+	<thead>
+		<tr>
+			<th>用户编码</th>
+			<th>用户名</th>
+			<th>用户昵称</th>
+			<th>手机号码</th>
+			<th>电子邮箱</th>
+			<th>联系方式</th>
+			<th>联系地址</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="obj : ${pageInfo.list}">
+			<td th:text="${obj.userId}"></td>
+			<td th:text="${obj.userName}"></td>
+			<td th:text="${obj.userAsname}"></td>
+			<td th:text="${obj.userPhone}"></td>
+			<td th:text="${obj.userEmail}"></td>
+			<td th:text="${obj.userNumber}"></td>
+			<td th:text="${obj.userAddress}"></td>
+			<td class="linkBlue2">
+				<a href="javaScript:;"
+				th:onclick="'javascript:userManage.redictRoleUserUrl('+${obj.userId}+');'">配置角色</a>
+				| <a href="javaScript:;"
+				th:onclick="'javascript:userManage.showEdit('+${obj.userId}+');'">编辑</a>
+				| <a href="javaScript:;"
+				th:onclick="'javascript:userManage.confirmUpdateStatus('+${obj.userId}+',\'0\');'">失效</a></td>
+		</tr>
+	</tbody>
+</table>
+<div class="overflow-hidden clearfix">
+	<div class="fl">
+		<button class="btn btn-primary btn-small"
+			onclick="userManage.showAdd();">
+			<i class="glyphicon glyphicon-plus"></i>新增用户
+		</button>
+	</div>
+
+	<!-- 分页 -->
+	<div class="pagerBar">
+		<script>
+			function pagerClick(index) {
+				userManage.initDataList(index,10);
+			}
+		</script>
+		<div th:include="~{admin/common/pager :: pager}"></div>
+	</div>
+	<!-- pagerBar end-->
+</div>

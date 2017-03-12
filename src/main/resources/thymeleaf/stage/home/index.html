@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{stage/common/layout}">
+
+<head>
+
+
+	<!-- <link type="text/css" rel="stylesheet" th:href="@{/custom/css/bootstrap.min.css}"> -->
+	<!-- <link type="text/css" rel="stylesheet" th:href="@{/custom/css/font-awesome.4.6.0.css}"> -->
+	<link type="text/css" rel="stylesheet" th:href="@{/custom/dist/gridstack.css}">
+	<!-- <link type="text/css" rel="stylesheet" th:href="@{/custom/css/default.css}"> 	 -->
+		
+	<!-- 静态级界面导入的 -->
+    <link type="text/css"  rel="stylesheet" th:href="@{/css/bootstrap.min.css?v=${CSS_VERSION}}">
+	
+	<link type="text/css"  rel="stylesheet" th:href="@{/css/gxgyxx.css?v=${CSS_VERSION}}">
+	
+	
+	<script th:src="@{/custom/js/jquery.1.1min.js?v=${JS_VERSION}}"></script>
+	<script th:src="@{/custom/js/jquery-ui.min.js?v=${JS_VERSION}}"></script>
+	<script th:src="@{/custom/js/bootstrap.min.js?v=${JS_VERSION}}"></script>
+	<script th:src="@{/custom/js/lodash.min.js?v=${JS_VERSION}}"></script>
+	<script th:src="@{/custom/dist/gridstack.js?v=${JS_VERSION}}"></script> 
+    
+    
+	<script th:src="@{/js/frameajax/frameajax.js?v=${JS_VERSION}}"></script>
+    
+    
+    <script th:src="@{/js-busi/stage/home.js?v=${JS_VERSION}}"></script> 
+    
+
+</head>
+<body layout:fragment="screen_content">
+	<input type="hidden" id="olId" th:value="${olId}">
+	<input type="hidden" id="modelId" th:value="${modelId}">
+	
+	<section class="w980 overflow-hidden mb10" style="background-color: green;">
+
+		<!-- 定义的布局DIV -->
+		<div class="grid-stack" id="showDIV"></div>
+
+	</section>
+
+
+
+
+
+	<!-- 部门链接 -->
+	<section class="w980 overflow-hidden">
+		<div class="tabBar">
+			<ul class="nav nav-tabs clearfix" role="tablist">
+				<li class="active"><a href="#tabBar01" role="tab"
+					data-toggle="tab">各省工信委</a></li>
+				<li><a href="#tabBar02" role="tab" data-toggle="tab">广西自治区直属部门</a>
+				</li>
+				<li><a href="#tabBar03" role="tab" data-toggle="tab">国家各部委</a>
+				</li>
+				<li><a href="#tabBar04" role="tab" data-toggle="tab">各省工信委</a>
+				</li>
+				<li><a href="#tabBar05" role="tab" data-toggle="tab">广西自治区直属部门</a>
+				</li>
+				<li><a href="#tabBar06" role="tab" data-toggle="tab">国家各部委</a>
+				</li>
+			</ul>
+			<div class="tab-content listTableCon">
+				<!-- 01 -->
+				<div id="tabBar01" class="tab-pane active">
+
+					<div class="friend_link clearfix overflow-hidden">
+						<ul>
+							<li><a href="www.baidu.com">国家发展和改革委员会会会会会</a></li>
+							<li><a href="www.baidu.com">外交部</a></li>
+							<li><a href="www.baidu.com">外交部</a></li>
+							<li><a href="www.baidu.com">外交部</a></li>
+							<li><a href="www.baidu.com">外交部</a></li>
+							<li><a href="www.baidu.com">国家发展和改革委员会</a></li>
+							<li><a href="www.baidu.com">国家发展和改革委员会会会会会</a></li>
+							<li><a href="www.baidu.com">外交部</a></li>
+							<li><a href="www.baidu.com">外交部</a></li>
+							<li><a href="www.baidu.com">外交部</a></li>
+							<li><a href="www.baidu.com">外交部</a></li>
+							<li><a href="www.baidu.com">外交部</a></li>
+							<li><a href="www.baidu.com">国家发展和改革委员会会会会会</a></li>
+							<li><a href="www.baidu.com">外交部</a></li>
+							<li><a href="www.baidu.com">外交部</a></li>
+							<li><a href="www.baidu.com">外交部</a></li>
+							<li><a href="www.baidu.com">外交部</a></li>
+							<li><a href="www.baidu.com">外交部</a></li>
+							<li><a href="www.baidu.com">国家发展和改革委员会会会会会</a></li>
+							<li><a href="www.baidu.com">外交部</a></li>
+							<li><a href="www.baidu.com">外交部</a></li>
+							<li><a href="www.baidu.com">外交部</a></li>
+							<li><a href="www.baidu.com">外交部</a></li>
+							<li><a href="www.baidu.com">外交部</a></li>
+						</ul>
+					</div>
+
+				</div>
+				<!-- 01 end-->
+
+				<!-- 02 -->
+				<div id="tabBar02" class="tab-pane">
+
+					<div class="friend_link clearfix overflow-hidden">
+						<ul>
+							<li><a href="www.baidu.com">国家发展和改革委员会会会会会</a></li>
+							<li><a href="www.baidu.com">外交部</a></li>
+							<li><a href="www.baidu.com">外交部</a></li>
+						</ul>
+					</div>
+
+				</div>
+				<!-- 02 end-->
+
+				<!-- 03 -->
+				<div id="tabBar03" class="tab-pane">33</div>
+				<!-- 03 end-->
+
+				<!-- 04 -->
+				<div id="tabBar04" class="tab-pane">44</div>
+				<!-- 04 end-->
+
+				<!-- 05 -->
+				<div id="tabBar05" class="tab-pane">55</div>
+				<!-- 05 end-->
+
+				<!-- 06 -->
+				<div id="tabBar06" class="tab-pane">66</div>
+				<!-- 06 end-->
+			</div>
+		</div>
+	</section>
+	
+	
+</body>
+</html>

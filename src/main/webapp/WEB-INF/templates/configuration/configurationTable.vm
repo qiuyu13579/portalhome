@@ -1,0 +1,29 @@
+#set($layout="layout/layout.vm")
+#parse("sys/sys_param.vm")
+<link rel="stylesheet" type="text/css" href="${CSS_PATH}/public/global.css" />
+<link rel="stylesheet" type="text/css" href="${CSS_PATH}/my_walter_tesco.css">
+<link rel="stylesheet" type="text/css" href="${CSS_PATH}/addJobStyle.css">
+<script src="${BUSIJS_PATH}/configuration/configurationTable.js?v=${JS_VERSION}" type="text/javascript"></script>
+<script src="${RESOURCE_PATH}/my_walter_tesco/my_walter_tesco.js"></script>
+<script src="${RESOURCE_PATH}/my_walter_tesco/My97DatePicker/WdatePicker.js"></script>
+<script src="${RESOURCE_PATH}/SimpleTree.js"></script>
+
+<!-- 主内容 -->
+<div class="tabBar">
+            <ul class="nav nav-tabs" role="tablist" >
+                <li>
+                    <a id="tab1" href="#tabBar01" role="tab" data-toggle="tab" onclick="getOrganizationTree()">组织机构树配置</a>
+                </li>
+                <li>
+                    <a id="tab2" href="#tabBar02" role="tab" data-toggle="tab" onclick="getPermission()">权限配置</a>
+                </li>
+                <li >
+                    <a id="tab3" href="#tabBar03" role="tab" data-toggle="tab">自动派单配置</a>
+                </li>
+                <li>
+                    <a id="tab4" href="#tabBar04" role="tab" data-toggle="tab" >派发局向配置</a>
+                </li>
+            </ul>
+			<div class="tab-content workFlow" id="configurationTableContent">
+			</div>
+</div>

@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ai.portalhome.dao.mapper.TLoColumnMapper" >
+  <resultMap id="BaseResultMap" type="com.ai.portalhome.dao.model.TLoColumn" >
+    <id column="col_id" property="colId" jdbcType="INTEGER" />
+    <result column="ol_id" property="olId" jdbcType="INTEGER" />
+    <result column="col_title" property="colTitle" jdbcType="VARCHAR" />
+    <result column="col_desc" property="colDesc" jdbcType="VARCHAR" />
+    <result column="col_type" property="colType" jdbcType="VARCHAR" />
+    <result column="col_x" property="colX" jdbcType="INTEGER" />
+    <result column="col_y" property="colY" jdbcType="INTEGER" />
+    <result column="col_width" property="colWidth" jdbcType="INTEGER" />
+    <result column="col_heigh" property="colHeigh" jdbcType="INTEGER" />
+    <result column="col_order" property="colOrder" jdbcType="INTEGER" />
+    <result column="if_edit" property="ifEdit" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="create_user" property="createUser" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_user" property="updateUser" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    col_id, ol_id, col_title, col_desc, col_type, col_x, col_y, col_width, col_heigh, 
+    col_order, if_edit, status, create_user, create_time, update_user, update_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ai.portalhome.dao.model.TLoColumnExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from T_LO_COLUMN
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from T_LO_COLUMN
+    where col_id = #{colId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from T_LO_COLUMN
+    where col_id = #{colId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ai.portalhome.dao.model.TLoColumn" >
+    insert into T_LO_COLUMN (col_id, ol_id, col_title, 
+      col_desc, col_type, col_x, 
+      col_y, col_width, col_heigh, 
+      col_order, if_edit, status, 
+      create_user, create_time, update_user, 
+      update_time)
+    values (#{colId,jdbcType=INTEGER}, #{olId,jdbcType=INTEGER}, #{colTitle,jdbcType=VARCHAR}, 
+      #{colDesc,jdbcType=VARCHAR}, #{colType,jdbcType=VARCHAR}, #{colX,jdbcType=INTEGER}, 
+      #{colY,jdbcType=INTEGER}, #{colWidth,jdbcType=INTEGER}, #{colHeigh,jdbcType=INTEGER}, 
+      #{colOrder,jdbcType=INTEGER}, #{ifEdit,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{createUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ai.portalhome.dao.model.TLoColumn" >
+    insert into T_LO_COLUMN
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="colId != null" >
+        col_id,
+      </if>
+      <if test="olId != null" >
+        ol_id,
+      </if>
+      <if test="colTitle != null" >
+        col_title,
+      </if>
+      <if test="colDesc != null" >
+        col_desc,
+      </if>
+      <if test="colType != null" >
+        col_type,
+      </if>
+      <if test="colX != null" >
+        col_x,
+      </if>
+      <if test="colY != null" >
+        col_y,
+      </if>
+      <if test="colWidth != null" >
+        col_width,
+      </if>
+      <if test="colHeigh != null" >
+        col_heigh,
+      </if>
+      <if test="colOrder != null" >
+        col_order,
+      </if>
+      <if test="ifEdit != null" >
+        if_edit,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="createUser != null" >
+        create_user,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateUser != null" >
+        update_user,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="colId != null" >
+        #{colId,jdbcType=INTEGER},
+      </if>
+      <if test="olId != null" >
+        #{olId,jdbcType=INTEGER},
+      </if>
+      <if test="colTitle != null" >
+        #{colTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="colDesc != null" >
+        #{colDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="colType != null" >
+        #{colType,jdbcType=VARCHAR},
+      </if>
+      <if test="colX != null" >
+        #{colX,jdbcType=INTEGER},
+      </if>
+      <if test="colY != null" >
+        #{colY,jdbcType=INTEGER},
+      </if>
+      <if test="colWidth != null" >
+        #{colWidth,jdbcType=INTEGER},
+      </if>
+      <if test="colHeigh != null" >
+        #{colHeigh,jdbcType=INTEGER},
+      </if>
+      <if test="colOrder != null" >
+        #{colOrder,jdbcType=INTEGER},
+      </if>
+      <if test="ifEdit != null" >
+        #{ifEdit,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null" >
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ai.portalhome.dao.model.TLoColumnExample" resultType="java.lang.Integer" >
+    select count(*) from T_LO_COLUMN
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update T_LO_COLUMN
+    <set >
+      <if test="record.colId != null" >
+        col_id = #{record.colId,jdbcType=INTEGER},
+      </if>
+      <if test="record.olId != null" >
+        ol_id = #{record.olId,jdbcType=INTEGER},
+      </if>
+      <if test="record.colTitle != null" >
+        col_title = #{record.colTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="record.colDesc != null" >
+        col_desc = #{record.colDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.colType != null" >
+        col_type = #{record.colType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.colX != null" >
+        col_x = #{record.colX,jdbcType=INTEGER},
+      </if>
+      <if test="record.colY != null" >
+        col_y = #{record.colY,jdbcType=INTEGER},
+      </if>
+      <if test="record.colWidth != null" >
+        col_width = #{record.colWidth,jdbcType=INTEGER},
+      </if>
+      <if test="record.colHeigh != null" >
+        col_heigh = #{record.colHeigh,jdbcType=INTEGER},
+      </if>
+      <if test="record.colOrder != null" >
+        col_order = #{record.colOrder,jdbcType=INTEGER},
+      </if>
+      <if test="record.ifEdit != null" >
+        if_edit = #{record.ifEdit,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createUser != null" >
+        create_user = #{record.createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateUser != null" >
+        update_user = #{record.updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateTime != null" >
+        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update T_LO_COLUMN
+    set col_id = #{record.colId,jdbcType=INTEGER},
+      ol_id = #{record.olId,jdbcType=INTEGER},
+      col_title = #{record.colTitle,jdbcType=VARCHAR},
+      col_desc = #{record.colDesc,jdbcType=VARCHAR},
+      col_type = #{record.colType,jdbcType=VARCHAR},
+      col_x = #{record.colX,jdbcType=INTEGER},
+      col_y = #{record.colY,jdbcType=INTEGER},
+      col_width = #{record.colWidth,jdbcType=INTEGER},
+      col_heigh = #{record.colHeigh,jdbcType=INTEGER},
+      col_order = #{record.colOrder,jdbcType=INTEGER},
+      if_edit = #{record.ifEdit,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=VARCHAR},
+      create_user = #{record.createUser,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      update_user = #{record.updateUser,jdbcType=VARCHAR},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ai.portalhome.dao.model.TLoColumn" >
+    update T_LO_COLUMN
+    <set >
+      <if test="olId != null" >
+        ol_id = #{olId,jdbcType=INTEGER},
+      </if>
+      <if test="colTitle != null" >
+        col_title = #{colTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="colDesc != null" >
+        col_desc = #{colDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="colType != null" >
+        col_type = #{colType,jdbcType=VARCHAR},
+      </if>
+      <if test="colX != null" >
+        col_x = #{colX,jdbcType=INTEGER},
+      </if>
+      <if test="colY != null" >
+        col_y = #{colY,jdbcType=INTEGER},
+      </if>
+      <if test="colWidth != null" >
+        col_width = #{colWidth,jdbcType=INTEGER},
+      </if>
+      <if test="colHeigh != null" >
+        col_heigh = #{colHeigh,jdbcType=INTEGER},
+      </if>
+      <if test="colOrder != null" >
+        col_order = #{colOrder,jdbcType=INTEGER},
+      </if>
+      <if test="ifEdit != null" >
+        if_edit = #{ifEdit,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null" >
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where col_id = #{colId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ai.portalhome.dao.model.TLoColumn" >
+    update T_LO_COLUMN
+    set ol_id = #{olId,jdbcType=INTEGER},
+      col_title = #{colTitle,jdbcType=VARCHAR},
+      col_desc = #{colDesc,jdbcType=VARCHAR},
+      col_type = #{colType,jdbcType=VARCHAR},
+      col_x = #{colX,jdbcType=INTEGER},
+      col_y = #{colY,jdbcType=INTEGER},
+      col_width = #{colWidth,jdbcType=INTEGER},
+      col_heigh = #{colHeigh,jdbcType=INTEGER},
+      col_order = #{colOrder,jdbcType=INTEGER},
+      if_edit = #{ifEdit,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where col_id = #{colId,jdbcType=INTEGER}
+  </update>
+</mapper>

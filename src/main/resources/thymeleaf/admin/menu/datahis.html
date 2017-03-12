@@ -1,0 +1,45 @@
+﻿<!-- 数据展示区 -->
+<table
+	class="table table-bordered table-striped table-hover table_center table_th_center font12 ">
+	<thead>
+		<tr>
+			<th>菜单编码</th>
+			<th>菜单名称</th>
+			<th>菜单描述</th>
+			<th>上级菜单</th>
+			<th>展示顺序</th>
+			<th>菜单图标</th>
+			<th>链接地址</th>
+			<th>是否可点击</th>
+			<th>状态</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="obj : ${pageInfo.list}">
+			<td th:text="${obj.menuId}"></td>
+			<td th:text="${obj.menuName}"></td>
+			<td th:text="${obj.menuDesc}"></td>
+			<td th:text="${obj.menuSup}"></td>
+			<td th:text="${obj.menuOrder}"></td>
+			<td th:text="${obj.menuIcon}"></td>
+			<td th:text="${obj.menuUrl}"></td>
+			<td th:text="${obj.ifClick}"></td>
+			<td th:text="${obj.status}"></td>
+			<td class="linkBlue2"><a href="javaScript:;"
+				th:onclick="'javascript:menuManage.confirmUpdateStatus('+${obj.menuId}+',\'1\');'">生效</a></td>
+		</tr>
+	</tbody>
+</table>
+<div class="overflow-hidden clearfix">
+	<!-- 分页 -->
+	<div class="pagerBar">
+		<script>
+			function pagerClick(index) {
+				menuManage.initDataList(index,10);
+			}
+		</script>
+		<div th:include="~{admin/common/pager :: pager}"></div>
+	</div>
+	<!-- pagerBar end-->
+</div>

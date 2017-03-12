@@ -1,0 +1,45 @@
+﻿<!-- 弹出框 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel"  th:fragment="ject">
+	<div class="modal-dialog" role="document" style="width: 570px">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">自定义布局</h4>
+			</div>
+
+			<div class="modal-body listTableCon font12">
+			
+				<!-- 展示自定义弹出内容 -->
+				<section id="dataDiv" style="display: none;" class="showDIV"></section>
+				
+				<section id="titleDiv" style="display: none;" class="showDIV">
+					<table class="query" width="100%" border="0" cellspacing="0"
+						cellpadding="0">
+						<tbody>
+							<tr>
+								<td width="90%" align="left"><span class="color-red"
+									id="titleMsg">错误提示</span></td>
+							</tr>
+							<tr>
+								<td colspan="10">
+									<div class="modal-footer">
+										<button type="button" class="btn btn-primary"
+											onclick="" id="submitBut" style="display: none;">确定</button>
+										<button type="button" class="btn btn-default" data-dismiss="modal"
+											id="closeBut">关闭</button>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 弹出框 end-->

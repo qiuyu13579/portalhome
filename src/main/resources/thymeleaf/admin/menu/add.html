@@ -1,0 +1,67 @@
+﻿<!-- 编辑框 -->
+<table class="query" width="100%" border="0" cellspacing="0"
+	cellpadding="0">
+	<tbody>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>菜单名称：
+			</td>
+			<td><input id="menuName" class=" form-control input_w300"
+				type="text" maxlength="15"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>菜单描述：
+			</td>
+			<td><input id="menuDesc" class=" form-control input_w300"
+				type="text" maxlength="30"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>菜单链接：
+			</td>
+			<td><input id="menuUrl" class=" form-control input_w300"
+				type="text" maxlength="50"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>展示顺序：
+			</td>
+			<td><input id="menuOrder" class=" form-control input_w300"
+				type="text" maxlength="4"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>菜单图标：
+			</td>
+			<td><input id="menuIcon" class=" form-control input_w300"
+				type="text" maxlength="10"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>上级菜单：
+			</td>
+			<td><input id="menuSup" class=" form-control input_w300"
+				type="text" maxlength="4"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>是否可点击：
+			</td>
+			<td><select id="ifClick" class="form-control">
+					<option value="1" selected="selected">是</option>
+					<option value="0">否</option>
+			</select><br /> <span class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td colspan="10">
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary"
+						onclick="menuManage.addMenu();" id="submitBut">保存</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal"
+						id="closeBut">关闭</button>
+				</div>
+			</td>
+		</tr>
+
+	</tbody>
+</table>

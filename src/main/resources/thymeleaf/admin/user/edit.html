@@ -1,0 +1,66 @@
+﻿<!-- 编辑框 -->
+<table class="query" width="100%" border="0" cellspacing="0"
+	cellpadding="0">
+	<tbody>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>用户编码：
+			</td>
+			<td><input id="userId" class=" form-control input_w300"
+				type="text" maxlength="15" th:value="${info.userId}" disabled="disabled"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>用户名：
+			</td>
+			<td><input id="userName" class=" form-control input_w300"
+				type="text" maxlength="15" th:value="${info.userName}"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>用户昵称：
+			</td>
+			<td><input id="userAsname" class=" form-control input_w300"
+				type="text" maxlength="15" th:value="${info.userAsname}"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>手机号码：
+			</td>
+			<td><input id="userPhone" class=" form-control input_w300"
+				type="text" maxlength="15" th:value="${info.userPhone}"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>电子邮箱：
+			</td>
+			<td><input id="userEmail" class=" form-control input_w300"
+				type="text" maxlength="15" th:value="${info.userEmail}"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%">联系方式：
+			</td>
+			<td><input id="userNumber" class=" form-control input_w300"
+				type="text" maxlength="15" th:value="${info.userNumber}"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%">联系地址：
+			</td>
+			<td><input id="userAddress" class=" form-control input_w300"
+				type="text" maxlength="15" th:value="${info.userAddress}"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td colspan="10">
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary"
+						onclick="userManage.editUser();" id="submitBut">保存</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal"
+						id="closeBut">关闭</button>
+				</div>
+			</td>
+		</tr>
+
+	</tbody>
+</table>

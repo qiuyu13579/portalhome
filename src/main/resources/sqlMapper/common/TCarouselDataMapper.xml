@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ai.portalhome.dao.mapper.TCarouselDataMapper" >
+  <resultMap id="BaseResultMap" type="com.ai.portalhome.dao.model.TCarouselData" >
+    <id column="data_id" property="dataId" jdbcType="INTEGER" />
+    <result column="car_id" property="carId" jdbcType="INTEGER" />
+    <result column="car_image" property="carImage" jdbcType="VARCHAR" />
+    <result column="car_title" property="carTitle" jdbcType="VARCHAR" />
+    <result column="car_url" property="carUrl" jdbcType="VARCHAR" />
+    <result column="car_order" property="carOrder" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="create_user" property="createUser" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_user" property="updateUser" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    data_id, car_id, car_image, car_title, car_url, car_order, status, create_user, create_time, 
+    update_user, update_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ai.portalhome.dao.model.TCarouselDataExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from T_CAROUSEL_DATA
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from T_CAROUSEL_DATA
+    where data_id = #{dataId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from T_CAROUSEL_DATA
+    where data_id = #{dataId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ai.portalhome.dao.model.TCarouselData" >
+    insert into T_CAROUSEL_DATA (data_id, car_id, car_image, 
+      car_title, car_url, car_order, 
+      status, create_user, create_time, 
+      update_user, update_time)
+    values (#{dataId,jdbcType=INTEGER}, #{carId,jdbcType=INTEGER}, #{carImage,jdbcType=VARCHAR}, 
+      #{carTitle,jdbcType=VARCHAR}, #{carUrl,jdbcType=VARCHAR}, #{carOrder,jdbcType=INTEGER}, 
+      #{status,jdbcType=VARCHAR}, #{createUser,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateUser,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ai.portalhome.dao.model.TCarouselData" >
+    insert into T_CAROUSEL_DATA
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="dataId != null" >
+        data_id,
+      </if>
+      <if test="carId != null" >
+        car_id,
+      </if>
+      <if test="carImage != null" >
+        car_image,
+      </if>
+      <if test="carTitle != null" >
+        car_title,
+      </if>
+      <if test="carUrl != null" >
+        car_url,
+      </if>
+      <if test="carOrder != null" >
+        car_order,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="createUser != null" >
+        create_user,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateUser != null" >
+        update_user,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="dataId != null" >
+        #{dataId,jdbcType=INTEGER},
+      </if>
+      <if test="carId != null" >
+        #{carId,jdbcType=INTEGER},
+      </if>
+      <if test="carImage != null" >
+        #{carImage,jdbcType=VARCHAR},
+      </if>
+      <if test="carTitle != null" >
+        #{carTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="carUrl != null" >
+        #{carUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="carOrder != null" >
+        #{carOrder,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null" >
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ai.portalhome.dao.model.TCarouselDataExample" resultType="java.lang.Integer" >
+    select count(*) from T_CAROUSEL_DATA
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update T_CAROUSEL_DATA
+    <set >
+      <if test="record.dataId != null" >
+        data_id = #{record.dataId,jdbcType=INTEGER},
+      </if>
+      <if test="record.carId != null" >
+        car_id = #{record.carId,jdbcType=INTEGER},
+      </if>
+      <if test="record.carImage != null" >
+        car_image = #{record.carImage,jdbcType=VARCHAR},
+      </if>
+      <if test="record.carTitle != null" >
+        car_title = #{record.carTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="record.carUrl != null" >
+        car_url = #{record.carUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.carOrder != null" >
+        car_order = #{record.carOrder,jdbcType=INTEGER},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createUser != null" >
+        create_user = #{record.createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateUser != null" >
+        update_user = #{record.updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateTime != null" >
+        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update T_CAROUSEL_DATA
+    set data_id = #{record.dataId,jdbcType=INTEGER},
+      car_id = #{record.carId,jdbcType=INTEGER},
+      car_image = #{record.carImage,jdbcType=VARCHAR},
+      car_title = #{record.carTitle,jdbcType=VARCHAR},
+      car_url = #{record.carUrl,jdbcType=VARCHAR},
+      car_order = #{record.carOrder,jdbcType=INTEGER},
+      status = #{record.status,jdbcType=VARCHAR},
+      create_user = #{record.createUser,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      update_user = #{record.updateUser,jdbcType=VARCHAR},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ai.portalhome.dao.model.TCarouselData" >
+    update T_CAROUSEL_DATA
+    <set >
+      <if test="carId != null" >
+        car_id = #{carId,jdbcType=INTEGER},
+      </if>
+      <if test="carImage != null" >
+        car_image = #{carImage,jdbcType=VARCHAR},
+      </if>
+      <if test="carTitle != null" >
+        car_title = #{carTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="carUrl != null" >
+        car_url = #{carUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="carOrder != null" >
+        car_order = #{carOrder,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null" >
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null" >
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where data_id = #{dataId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ai.portalhome.dao.model.TCarouselData" >
+    update T_CAROUSEL_DATA
+    set car_id = #{carId,jdbcType=INTEGER},
+      car_image = #{carImage,jdbcType=VARCHAR},
+      car_title = #{carTitle,jdbcType=VARCHAR},
+      car_url = #{carUrl,jdbcType=VARCHAR},
+      car_order = #{carOrder,jdbcType=INTEGER},
+      status = #{status,jdbcType=VARCHAR},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where data_id = #{dataId,jdbcType=INTEGER}
+  </update>
+</mapper>

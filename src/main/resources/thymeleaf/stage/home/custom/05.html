@@ -1,0 +1,21 @@
+﻿<!-- 单元格分组 -->
+<div class="fl i_entry whiteBg mb10 mr10" style="width: 100%;height: 100%;">
+          <h3 th:text="${info.group.groupName}">网上办事</h3>
+          <ul class="clearfix">
+          
+          
+            <li th:each="obj,objStat : ${info.nextList}" >
+            	<a th:href="@{${obj.celUrl}}"><i><img th:src="${obj.celImage}"></i>
+            		<span th:text="${obj.celName}"></span>
+            	</a>
+            </li>  <!-- 图标规格32px*32px -->
+            
+           <!--  <li><a href="#"><i><img src="upfiles/icon01.png"></i>表格下载</a></li>
+            <li><a href="#"><i><img src="upfiles/icon01.png"></i>网上办事大厅</a></li>
+            <li><a href="#"><i><img src="upfiles/icon01.png"></i>领导信箱</a></li>
+            <li><a href="#"><i><img src="upfiles/icon01.png"></i>网上访谈</a></li> -->
+          </ul>
+      </div>
+<!-- 快速入口 -->
+
+

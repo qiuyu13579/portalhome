@@ -1,0 +1,73 @@
+#set($layout="layout/div/layout.vm")
+<script type="text/javascript">
+    $(function(){
+        $(".st_tree").SimpleTree({
+            click:function(a){
+                if(!$(a).attr("hasChild"))
+                    alert($(a).attr("ref"));
+            }
+        });
+    });
+
+</script>
+ <div id="tabBar02" >
+                    <div class="rightWrap">
+                        <div class="right_content" >
+                            <div class="workFlowTit workFlowTitR">
+                                <h3>已配置菜单权限</h3>
+                            </div>
+                            <table border="0" class="editTable powerTab" style="margin-left: 20px;">
+                                <tbody>
+                                <tr>
+                                    <td class="Hint">我的工单：</td>
+                                    <td>
+                                        <label class="powerCheck"><input type="checkbox">投诉工单</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="Hint">工作流配置台：</td>
+                                    <td >
+                                        <label class="powerCheck"><input type="checkbox">组织机构数配置</label>
+                                        <label class="powerCheck"><input type="checkbox">权限配置</label>
+                                        <label class="powerCheck"><input type="checkbox">工单配置</label><br>
+                                        <label class="powerCheck"><input type="checkbox">派发局向配置</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="Hint">&nbsp;</td>
+                                    <td ><button class="btn btn-primary">提交</button><button class="btn btn-default">取消</button></td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+
+
+                    <div class="left_content">
+                        <div class="workFlowTit workFlowTitL"><h3>工作流组织结构树</h3></div>
+                        <div class="st_tree pl60">
+                            <ul>
+                                <li><input type="checkbox" class="workFlowCheck"><a href="#" ref=""><span class="wordTit">总部</span><input type="text" class="wordInput"></a></li>
+                                <ul show="true">
+                                    <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="zhwt">总部领导</a></li>
+                                    <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="yszf">终端管理</a></li>
+                                    <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="wlfh">号卡管理</a></li>
+                                </ul>
+                                <li><input type="checkbox" class="workFlowCheck"><a href="#" ref=""><span class="wordTit">基地领导</span><input type="text" class="wordInput"></a></li>
+                                <ul show="true">
+                                    <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="zhwt">总部领导</a></li>
+                                    <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="yszf">终端管理</a></li>
+                                    <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="wlfh">号卡管理</a></li>
+                                </ul>
+                                <li><input type="checkbox" class="workFlowCheck"><a href="#" ref=""><span class="wordTit">基地业务运营部</span><input type="text" class="wordInput"></a></li>
+                                <ul show="true">
+                                    <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="zhwt">总部领导</a></li>
+                                    <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="yszf">终端管理</a></li>
+                                    <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="wlfh">号卡管理</a></li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>

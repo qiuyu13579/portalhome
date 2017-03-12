@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ai.portalhome.dao.mapper.SequenceUtilMapper">
+    <select id="selectNextval" resultType="java.lang.String">
+        select NEXT VALUE FOR ${seqname.seqName} as NEXT
+    </select>
+    <select id="selectNextvalOracle" resultType="java.lang.String">
+        select ${seqname.seqName}.NEXTVAL as NEXT from dual
+    </select>
+</mapper>

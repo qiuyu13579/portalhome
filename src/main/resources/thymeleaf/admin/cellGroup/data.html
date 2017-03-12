@@ -1,0 +1,45 @@
+﻿<!-- 数据展示区 -->
+<table
+	class="table table-bordered table-striped table-hover table_center table_th_center font12 ">
+	<thead>
+     	<tr>
+			<th>单元格分组编码</th>
+			<th>单元格分组标题</th>
+			<th>单元格分组说明</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="obj : ${pageInfo.list}">
+			<td th:text="${obj.groupId}"></td>
+			<td th:text="${obj.groupName}"></td>
+			<td th:text="${obj.groupDesc}"></td>
+			<td class="linkBlue2">
+				<a href="javaScript:;"
+				th:onclick="'javascript:cellGroupManage.redictCellInfoUrl('+${obj.groupId}+');'">配置单元格</a>
+				| <a href="javaScript:;"
+				th:onclick="'javascript:cellGroupManage.showEdit('+${obj.groupId}+');'">编辑</a>
+				| <a href="javaScript:;"
+				th:onclick="'javascript:cellGroupManage.confirmUpdateStatus('+${obj.groupId}+',\'0\');'">删除</a></td>
+		</tr>
+	</tbody>
+</table>
+<div class="overflow-hidden clearfix">
+	<div class="fl">
+		<button class="btn btn-primary btn-small"
+			onclick="cellGroupManage.showAdd();">
+			<i class="glyphicon glyphicon-plus"></i>新增单元格分组
+		</button>
+	</div>
+
+	<!-- 分页 -->
+	<div class="pagerBar">
+		<script>
+			function pagerClick(index) {
+				cellGroupManage.initDataList(index,10);
+			}
+		</script>
+		<div th:include="~{admin/common/pager :: pager}"></div>
+	</div>
+	<!-- pagerBar end-->
+</div>

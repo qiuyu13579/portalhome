@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{stage/common/layout}">
+
+<body>
+<div layout:fragment="screen_content">
+	<!--当前位置-->
+	<div th:replace="~{stage/common/location :: location}"></div>
+	<section class="w980 overflow-hidden whiteBg">
+		<div class="content-box overflow-hidden ">
+			<div class="scene_position linkBlue font12 mb20 line-bom pb10">
+				<span>所选场景：</span><a href="#">场景3</a>&gt; 场景33
+			</div>
+
+			<div class="text-content">
+				<h2>工业和信息化部关于规范电信服务协议有关事项的通知</h2>
+				<p>各省、自治区、直辖市通信管理局，各相关电信业务经营者：</p>
+				<p>为规范电信服务，保障电信用户和电信业务经营者的合法权益，现将电信服务协议有关规范性要求通知如下：</p>
+				<p>一、电信业务经营者在开展相关电信业务经营活动时，应本着公平诚信的原则与用户订立电信服务协议，做到用户与电信业务经营者之间权利义务对等。</p>
+				<p>本通知所称的电信服务协议，是指电信业务经营者与用户之间设立、变更、终止电信服务权利义务关系的合同。</p>
+				<img src="../upfiles/1.jpg" width="1920" height="1280" alt="">
+			</div>
+
+			<div class="text-bom overflow-hidden clearfix">
+				<div class="text-down fl">
+					<span class="B">附件下载：</span> <span> <a href="#">文件.zip</a> <a
+						href="#">文件.doc</a>
+					</span>
+				</div>
+				<div class="B fr">
+					<a href="#">【打印本页】</a> <a href="#">【关闭窗口】</a>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+</div>
+
+</body>
+</html>

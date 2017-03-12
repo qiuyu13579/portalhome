@@ -1,0 +1,38 @@
+﻿<!-- 编辑框 -->
+<table class="query" width="100%" border="0" cellspacing="0"
+	cellpadding="0">
+	<tbody>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>角色名称：
+			</td>
+			<td><input id="roleName" class=" form-control input_w300"
+				type="text" maxlength="15"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>角色描述：
+			</td>
+			<td><input id="roleDesc" class=" form-control input_w300"
+				type="text" maxlength="40"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>展示顺序：
+			</td>
+			<td><input id="roleOrder" class=" form-control input_w300"
+				type="text" maxlength="4"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td colspan="10">
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary"
+						onclick="roleManage.addRole();" id="submitBut">保存</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal"
+						id="closeBut">关闭</button>
+				</div>
+			</td>
+		</tr>
+
+	</tbody>
+</table>

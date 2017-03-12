@@ -1,0 +1,69 @@
+#set($layout="layout/div/layout.vm")
+#parse("sys/sys_param.vm")
+<script src="${BUSIJS_PATH}/configuration/organizationTreeConfig.js?v=${JS_VERSION}" type="text/javascript"></script>
+
+<div id="tabBar01" >
+                    <div class="rightWrap">
+                        <div class="right_content" >
+                            <div class="workFlowTit workFlowTitR">
+                                <p class="upDown"><a href="#" class="active"><b>&#8593</b>上移</a><a href="#"><b>&#8595</b>下移</a> </p>
+                                <h3>沃易购角色工号</h3>
+                                <button class="btn btn-default btn-sm" onclick="addTree()">新增根目录</button>
+                                <button class="btn btn-default btn-sm">保存</button>
+                            </div>
+                            <div class="st_tree pl80">
+                                <ul>
+                                    <li><input type="checkbox" class="workFlowCheck"><a href="#" ref=""><span class="wordTit">总部</span><input type="text" class="wordInput"></a></li>
+                                        <ul show="true">
+                                            <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="zhwt">总部领导</a></li>
+                                            <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="yszf">终端管理</a></li>
+                                            <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="wlfh">号卡管理</a></li>
+                                        </ul>
+                                    <li><input type="checkbox" class="workFlowCheck"><a href="#" ref=""><span class="wordTit">基地领导</span><input type="text" class="wordInput"></a></li>
+                                        <ul show="true">
+                                            <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="zhwt">总部领导</a></li>
+                                            <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="yszf">终端管理</a></li>
+                                            <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="wlfh">号卡管理</a></li>
+                                        </ul>
+                                    <li><input type="checkbox" class="workFlowCheck"><a href="#" ref=""><span class="wordTit">基地业务运营部</span><input type="text" class="wordInput"></a></li>
+                                        <ul show="true">
+                                            <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="zhwt">总部领导</a></li>
+                                            <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="yszf">终端管理</a></li>
+                                            <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="wlfh">号卡管理</a></li>
+                                        </ul>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!--左边树-->
+                    <div class="left_content ">
+                        <div class="workFlowTit workFlowTitL"><h3>工作流组织结构树</h3></div>
+                        <div class="searchTree"><input class="form-control"><button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-search"></i>搜索</button></div>
+                        <div class="addBtn">
+                            <button class="btn btn-default btn-sm">添加</button><br>
+                            <button class="btn btn-default btn-sm">移除</button>
+                        </div>
+                        <div class="st_tree pl60">
+                            <ul>
+                                <ul show="true">
+                                    <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="zhwt">总部领导</a></li>
+                                    <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="yszf">终端管理</a></li>
+                                    <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="wlfh">号卡管理</a></li>
+                                    <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="zhwt">总部领导</a></li>
+                                    <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="yszf">终端管理</a></li>
+                                    <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="wlfh">号卡管理</a></li>
+                                    <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="zhwt">总部领导</a></li>
+                                    <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="yszf">终端管理</a></li>
+                                    <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="wlfh">号卡管理</a></li>
+                                    <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="zhwt">总部领导</a></li>
+                                    <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="yszf">终端管理</a></li>
+                                    <li><input type="checkbox" class="workFlowCheck"><a href="#" ref="wlfh">号卡管理</a></li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>

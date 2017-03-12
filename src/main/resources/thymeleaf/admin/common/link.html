@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<head th:fragment="link">
+
+    <script type="text/javascript">
+        var WEB_ROOT = '[[${#httpServletRequest.contextPath}]]';
+
+    </script>
+
+	<!-- 门户加的  后台管理界面-->
+	<link type="text/css"  rel="stylesheet" th:href="@{/js/LeaRun_6.3.4/bootstrap/css/bootstrap.min.css?v=${CSS_VERSION}}">
+    <link type="text/css"  rel="stylesheet" th:href="@{/css/LeaRun_6.3.4/font-awesome.min.css?v=${CSS_VERSION}}">
+    <link type="text/css"  rel="stylesheet" th:href="@{/css/LeaRun_6.3.4/index.css?v=${CSS_VERSION}}">
+    <link type="text/css"  rel="stylesheet" th:href="@{/css/LeaRun_6.3.4/skins/_all-skins.css?v=${CSS_VERSION}}">
+    
+    <!-- 组件类 -->
+    <script th:src="@{/js/LeaRun_6.3.4/jquery/jQuery-2.2.0.min.js?v=${JS_VERSION}}"></script>
+    <script th:src="@{/js/frameajax/frameajax.js?v=${JS_VERSION}}"></script>
+    <script th:src="@{/js/LeaRun_6.3.4/bootstrap/js/bootstrap.min.js?v=${JS_VERSION}}"></script>
+    
+    <!-- 业务类 -->
+    <script type="text/javascript" th:src="@{/js/LeaRun_6.3.4/index.js?v=${JS_VERSION}}"></script>
+    <script type="text/javascript" th:src="@{/js/LeaRun_6.3.4/initmenu.js?v=${JS_VERSION}}"></script>
+    
+    
+    
+</head>
+
+

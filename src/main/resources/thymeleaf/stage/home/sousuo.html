@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{stage/common/layout}">
+
+<head>
+
+<script th:src="@{/js/My97DatePicker/WdatePicker.js?v=${JS_VERSION}}"></script>
+
+<style type="text/css">
+</style>
+
+</head>
+
+<body layout:fragment="screen_content">
+
+	<!--当前位置-->
+	<div th:replace="~{stage/common/location :: location}"></div>
+
+	<section class="w980 overflow-hidden whiteBg">
+		<div class="content-box overflow-hidden ">
+
+			<!-- 搜索 -->
+			<div class="search-form mb20 ml20 mt15 clearfix">
+				<input class="search-text fl w330" type="text" placeholder="法律法规">
+				<button class="search-btn fl">搜索</button>
+				<input type="checkbox" class="ml20"> <a href=""
+					class="advanced ml10 ">高级搜索</a>
+			</div>
+
+			<div class="text-about">
+				<ul>
+					<li><b>关键词位置：</b> <input type="checkbox" checked
+						class="mr10 ml10">文章标题 <input type="checkbox"
+						class="mr10 ml20">正文</li>
+					<li><b>发布时间：</b> <select class="form-control">
+							<option value="">一周内</option>
+					</select> <i class="ml10"> <font class="mr10">自定义时间段</font> 开始时间：<input
+							class="Wdate form-control" type="text" name="showStartTime"
+							id="showStartTime"
+							onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})">
+							结束时间：<input class="Wdate form-control" type="text"
+							name="showStartTime" id="showStartTime"
+							onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})">
+					</i></li>
+					<li><b>文章来源：</b> <select class="form-control">
+							<option value="">信息部</option>
+					</select></li>
+					<li><b>文章分类：</b> <select class="form-control">
+							<option value="">信息公开</option>
+					</select></li>
+					<li><b>文章标签：</b> <select class="form-control">
+							<option value="">信息公开</option>
+					</select></li>
+				</ul>
+			</div>
+
+			<!-- 搜索列表 -->
+			<div class="search-total">
+				为您找到相关结果约 <span class="color-blue">10946</span> 条记录
+			</div>
+			<div class="list-news list clearfix">
+				<ul>
+					<li><a href="#"> <span class="w1">本委动态文章标题动态文章标题动态文章标题动态文章标题动态文章标题动态文章标题动态文章标题</span>
+							<span class="w2">2014-07-27</span>
+					</a></li>
+					<li><a href="#"> <span class="w1">本委动态文章标题</span> <span
+							class="w2">2014-07-27</span>
+					</a></li>
+					<li><a href="#"> <span class="w1">本委动态文章标题</span> <span
+							class="w2">2014-07-27</span>
+					</a></li>
+					<li><a href="#"> <span class="w1">本委动态文章标题</span> <span
+							class="w2">2014-07-27</span>
+					</a></li>
+					<li><a href="#"> <span class="w1">本委动态文章标题</span> <span
+							class="w2">2014-07-27</span>
+					</a></li>
+					<li><a href="#"> <span class="w1">本委动态文章标题</span> <span
+							class="w2">2014-07-27</span>
+					</a></li>
+					<li><a href="#"> <span class="w1">本委动态文章标题</span> <span
+							class="w2">2014-07-27</span>
+					</a></li>
+					<li><a href="#"> <span class="w1">本委动态文章标题</span> <span
+							class="w2">2014-07-27</span>
+					</a></li>
+					<li><a href="#"> <span class="w1">本委动态文章标题</span> <span
+							class="w2">2014-07-27</span>
+					</a></li>
+					<li><a href="#"> <span class="w1">本委动态文章标题</span> <span
+							class="w2">2014-07-27</span>
+					</a></li>
+				</ul>
+			</div>
+
+			<div class="pagerBar">
+				<div class="fr ml10 jump">
+					到第 <input type="text" value="1">页&nbsp;
+					<button>确定</button>
+				</div>
+				<ul class="pages">
+					<li class="pgNext">首页</li>
+					<li class="pgNext">上一页</li>
+					<li class="page-number">1</li>
+					<li class="page-number current">2</li>
+					<li class="page-number">3</li>
+					<li class="page-number pgCurrent">4</li>
+					<li class="page-number">5</li>
+					<li class="page-number">6</li>
+					<li class="page-number">7</li>
+					<li class="pgNext">下一页</li>
+					<li class="pgNext">末页</li>
+				</ul>
+			</div>
+			<!-- 搜索列表 end-->
+
+		</div>
+	</section>
+
+
+</body>
+</html>

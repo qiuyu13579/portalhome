@@ -1,0 +1,23 @@
+#parse("/sys/sys_param.vm")
+<script type="text/javascript" src="$!{BUSIJS_PATH}/common/pager.js"></script>
+<!--必须先定义pagerClick点击事件且要在引入pager.vm前定义-->
+<div class="pagerBar" style="margin-top:0px;">
+            <span data-toggle="pager" id="pagerId" data-count="$!{pageInfo.pages}" data-size="$!{pageInfo.pageSize}"
+                  data-currentindex="$!{pageInfo.pageNum}" contextpath="$!{CONTEXT_PATH}">
+            </span>
+</div>
+<input type="hidden" value="$!{CONTEXT_PATH}" id="pagerPath"/>
+<script>
+
+    if (typeof pagerClick === "undefined") {
+        pagerClick = function (index) {
+            alert(index)
+        }
+    }
+    $('#pagerId').pager({callback: pagerClick});
+
+</script>
+		
+		
+		
+		

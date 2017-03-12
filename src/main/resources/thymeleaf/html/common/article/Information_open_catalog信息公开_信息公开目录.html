@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>广西壮族自治区工业和信息委员会</title>
+    <meta name="keywords" content="工信委,广西工信委">
+    <meta name="description" content="">
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/gxgyxx.css" rel="stylesheet">
+    
+    <!-- 公开信息目录树形菜单 -->
+    <link rel="stylesheet" href="../css/zTreeStyle.css" type="text/css">
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+      <script src="../js/respond.min.js"></script>
+    <![endif]-->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/gxgyxx.js"></script>
+
+    <!-- jQuery文件,务必在bootstrap.min.js 之前引入 -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- 兼容placeholder属性 -->
+    <script src="../js/jquery.placeholder.js"></script>
+
+    <!-- 公开信息目录树形菜单 -->
+    <script type="text/javascript" src="../js/jquery.ztree.core.js"></script>
+    <script type="text/javascript" src="../js/jquery.ztree.excheck.js"></script>
+  </head>
+  <body>
+
+<div class="position w980 whiteBg mb10 linkBlue"><span>您当前位置：</span><a href="#">首页</a>&gt;<a href="#">信息公开</a>&gt;<a href="#">信息公开目录</a>&gt; </div>
+
+<section class="w980 overflow-hidden whiteBg">
+    <div class="content-box2 overflow-hidden ">
+        
+          <div class="tabBar">
+              <ul class="nav nav-tabs">
+                  <li class="active" name="tabBar01">
+                      <a href="#" target="_blank" >信息公开目录</a>
+                  </li>
+              </ul>
+          </div>
+
+          <div class="overflow-hidden">
+              <!-- 左边 -->
+              <div class="left-catalog fl">
+
+                  <SCRIPT type="text/javascript">
+                    <!--
+                    var setting = {
+                      check: {
+                        enable: true,
+                        chkStyle: "radio",
+                        radioType: "level"
+                      },
+                      data: {
+                        simpleData: {
+                          enable: true
+                        }
+                      }
+                    };
+
+                    var zNodes =[
+                      { id:1, pId:0, name:"随意勾选 1", open:true},
+                      { id:11, pId:1, name:"随意勾选 1-1", open:true},
+                      { id:111, pId:11, name:"随意勾选 1-1-1"},
+                      { id:112, pId:11, name:"随意勾选 1-1-2"},
+                      { id:112, pId:11, name:"随意勾选 1-1-2"},
+                      { id:12, pId:1, name:"随意勾选 1-2", open:true},
+                      { id:121, pId:12, name:"随意勾选 1-2-1"},
+                      { id:122, pId:12, name:"随意勾选 1-2-2"},
+                      { id:2, pId:0, name:"随意勾选 2", open:true},
+                      { id:21, pId:2, name:"随意勾选 2-1"},
+                      { id:22, pId:2, name:"随意勾选 2-2", open:true},
+                      { id:221, pId:22, name:"随意勾选 2-2-1", checked:true},
+                      { id:222, pId:22, name:"随意勾选 2-2-2"},
+                      { id:23, pId:2, name:"随意勾选 2-3"}
+
+                    ];
+                    
+                    var code;   
+                    function setCheck() {
+                      var type = $("#level").attr("checked")? "level":"all";
+                      setting.check.radioType = type;
+                      showCode('setting.check.radioType = "' + type + '";');
+                      $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+                    }
+                    function showCode(str) {
+                      if (!code) code = $("#code");
+                      code.empty();
+                      code.append("<li>"+str+"</li>");
+                    }
+                    
+                    $(document).ready(function(){
+                      setCheck();     
+                      $("#level").bind("change", setCheck);
+                      $("#all").bind("change", setCheck);
+                    });
+                    //-->
+                  </SCRIPT>
+                  <div id="treeDemo" class="ztree"></div>
+
+              </div>
+              <!-- 左边 end-->
+
+              <!-- 右边 -->
+              <div class="main-catalog fl">
+
+                    <div class="list-news list clearfix">
+                      <ul>
+                          <li>
+                            <a href="#">
+                                <span class="w1">本委动态文章标题动态文章标题动态文章标题动态文章标题动态文章标题动态文章标题动态文章标题</span>
+                                <span class="w2">2014-07-27</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                                <span class="w1">本委动态文章标题</span>
+                                <span class="w2">2014-07-27</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                                <span class="w1">本委动态文章标题</span>
+                                <span class="w2">2014-07-27</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                                <span class="w1">本委动态文章标题</span>
+                                <span class="w2">2014-07-27</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                                <span class="w1">本委动态文章标题</span>
+                                <span class="w2">2014-07-27</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                                <span class="w1">本委动态文章标题</span>
+                                <span class="w2">2014-07-27</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                                <span class="w1">本委动态文章标题</span>
+                                <span class="w2">2014-07-27</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                                <span class="w1">本委动态文章标题</span>
+                                <span class="w2">2014-07-27</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                                <span class="w1">本委动态文章标题</span>
+                                <span class="w2">2014-07-27</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                                <span class="w1">本委动态文章标题</span>
+                                <span class="w2">2014-07-27</span>
+                            </a>
+                          </li>
+                      </ul>
+                    </div>
+
+                    <div class="pagerBar"> 
+                          <div class="fr ml10 jump">到第
+                              <input type="text" value="1">页&nbsp;
+                              <button>确定</button>
+                          </div>
+                          <ul class="pages">
+                              <li class="pgNext"> 首页 </li>
+                              <li class="pgNext"> 上一页 </li>
+                              <li class="page-number"> 1 </li>
+                              <li class="page-number current"> 2 </li>
+                              <li class="page-number"> 3 </li>
+                              <li class="page-number pgCurrent"> 4 </li>
+                              <li class="page-number"> 5 </li>
+                              <li class="page-number"> 6 </li>
+                              <li class="page-number"> 7 </li>
+                              <li class="pgNext"> 下一页 </li>
+                              <li class="pgNext"> 末页 </li>
+                          </ul>
+                    </div>
+                
+              </div>
+              <!-- 右边 -->
+          </div>
+
+    </div>
+</section>
+
+
+
+  </body>
+</html>

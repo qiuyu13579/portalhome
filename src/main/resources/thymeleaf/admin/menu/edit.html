@@ -1,0 +1,90 @@
+﻿<!-- 编辑框 -->
+<table class="query" width="100%" border="0" cellspacing="0"
+	cellpadding="0">
+	<tbody>
+
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>菜单编码：
+			</td>
+			<td><input id="menuId" class=" form-control input_w300"
+				type="text" th:value="${info.menuId}" disabled="disabled"><br />
+				<span class="color-red pl5"></span></td>
+		</tr>
+
+
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>菜单名称：
+			</td>
+			<td><input id="menuName" class=" form-control input_w300"
+				type="text" maxlength="15" th:value="${info.menuName}"><br />
+				<span class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>菜单描述：
+			</td>
+			<td><input id="menuDesc" class=" form-control input_w300"
+				type="text" maxlength="30" th:value="${info.menuDesc}"><br />
+				<span class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>菜单链接：
+			</td>
+			<td><input id="menuUrl" class=" form-control input_w300"
+				type="text" maxlength="50" th:value="${info.menuUrl}"><br />
+				<span class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>展示顺序：
+			</td>
+			<td><input id="menuOrder" class=" form-control input_w300"
+				type="text" maxlength="4" th:value="${info.menuOrder}"><br />
+				<span class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>菜单图标：
+			</td>
+			<td><input id="menuIcon" class=" form-control input_w300"
+				type="text" maxlength="10" th:value="${info.menuIcon}"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>上级菜单：
+			</td>
+			<td><input id="menuSup" class=" form-control input_w300"
+				type="text" maxlength="4" th:value="${info.menuSup}"><br />
+				<span class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>是否可点击：
+			</td>
+			<td><select id="ifClick" class="form-control"
+				th:selValue="${info.ifClick}">
+					<option value="1">是</option>
+					<option value="0">否</option>
+			</select><br /> <span class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td colspan="10">
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary"
+						onclick="menuManage.editMenu();" id="submitBut">保存</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal"
+						id="closeBut">关闭</button>
+				</div>
+			</td>
+		</tr>
+
+	</tbody>
+</table>
+<script>
+	$(function() {
+
+		var selstatus = $("#ifClick");
+		var status = selstatus.attr("selValue");
+		selstatus.find("option[value='" + status + "']").attr("selected", true); //选中效果
+
+	});
+</script>
+
+
+

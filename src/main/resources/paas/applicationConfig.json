@@ -1,0 +1,60 @@
+{
+  "/com/ai/paas/gmimage/conf": {
+    "gmMode": "true",
+    "gmPath": "D:\\component\\GraphicsMagick-1.3.23-Q8",
+    "imageNameSplit": "_",
+    "imageType": ".jpg,.png",
+    "maxActive": "150",
+    "maxIdle": "20",
+    "maxWait": "1000",
+    "testOnBorrow": "false",
+    "testOnReturn": "true",
+    "originalPath": "F:\\data\\woegoimage\\images\\",
+    "thumbnailPath": "F:\\data\\woegoimage\\thumbnail\\",
+    "reserveImage": "F:\\data\\woegoimage\\fallback\\",
+    "upPath": "F:\\data\\woegoimage\\upload\\",
+    "upPathNew": "F:\\data\\woegoimage\\alter\\",
+    "uploadUrl": "http://127.0.0.1:8090/imagesvr",
+    "extent": "false",
+    "redisKeyPrefix": "static-",
+    "commandSize": "20",
+    "primaryParam": "productId",
+    "serverUrl": "http://127.0.0.1:8090/imagesvr"
+  },
+  "/com/ai/paas/file/conf": {
+    "fileServer": [
+      {
+        "ip": "127.0.0.1",
+        "port": "27017"
+      }
+    ],
+    "fileRepo": "admin",
+    "userName": "ca",
+    "password": "e871a0b877944d78429510f4da551a59a88587df2a24f820"
+  },
+  "/com/ai/paas/cache/conf": {
+    "hosts": "127.0.0.1:6379",
+    "timeOut": "20000",
+    "maxActive": "512",
+    "maxIdle": "100",
+    "maxWait": "1000",
+    "testOnBorrow": "false",
+    "testOnReturn": "true",
+    "dbIndex": "2",
+    "twemproxy": "false"
+  },
+  "/com/ai/paas/session/conf": {
+    "hosts": "132.37.3.31:13379",
+    "timeOut": "20000",
+    "maxActive": "1024",
+    "maxIdle": "100",
+    "maxWait": "1000",
+    "testOnBorrow": "false",
+    "testOnReturn": "true",
+    "dbIndex": "0",
+    "twemproxy": "false",
+    "expirationUpdateInterval": "300",
+    "maxInactiveInterval": "1800",
+    "domain": ""
+  }
+}

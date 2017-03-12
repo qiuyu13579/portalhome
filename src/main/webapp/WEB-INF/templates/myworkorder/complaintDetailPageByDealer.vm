@@ -1,0 +1,224 @@
+#set($layout="layout/layout.vm")
+#parse("sys/sys_param.vm")
+
+<link rel="stylesheet" type="text/css" href="${CSS_PATH}/public/global.css" />
+<link rel="stylesheet" type="text/css" href="${CSS_PATH}/my_walter_tesco.css">
+<link rel="stylesheet" type="text/css" href="${CSS_PATH}/addJobStyle.css">
+
+<script src="${BUSIJS_PATH}/myWokeOrder/myWorkOrderCenter.js?v=${JS_VERSION}" type="text/javascript"></script>
+
+<input id="complaintInfoId" style="display:none;" value="$!{complaintInfo.complaintInfoId}" ></input>
+
+<p class="gray" style="height:30px;font-weight: bold; color: #666;">投诉信息</p>
+<section class="queryForm" style="background-color: #f8f8f8; margin-bottom: 10px;">
+    <table class="Role_management ClearSideline addJob" width="100%">
+        <tbody>
+        <tr>
+            <td class="TextRight">渠道编码：</td>
+            <td><input type="text" class="form-control dateStyle" value="$!{complaintInfo.complaintStaffId}"></td>
+            <td class="TextRight">账户名称：</td>
+            <td><input type="text" class="form-control dateStyle" value="$!{complaintInfo.createComplaintName}"></td>
+            <td class="TextRight">省份：</td>
+            <td><select name="select7" class="form-control dateStyle">
+                <option>北京</option>
+                <option selected>广西</option>
+                <option>广东</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td class="TextRight">地市：</td>
+            <td><select name="select7" class="form-control dateStyle">
+                <option>北京</option>
+                <option selected>广西</option>
+                <option>广东</option>
+            </select></td>
+            <td class="TextRight">区县：</td>
+            <td><select name="select7" class="form-control dateStyle">
+                <option>北京</option>
+                <option selected>广西</option>
+                <option>广东</option>
+            </select></td>
+            <td class="TextRight">联系人：</td>
+            <td><input type="text" class="form-control dateStyle" value="$!{complaintInfo.linkPerson}"></td>
+        </tr>
+        <tr>
+            <td class="TextRight">联系方式：</td>
+            <td><input type="text" class="form-control dateStyle" value="$!{complaintInfo.linkTel}" ></td>
+            <td class="TextRight">问题类型：</td>
+            <td><input type="text" class="form-control dateStyle" value="$!{complaintInfo.complaintObjectType}"></td>
+            <td class="TextRight">二级分类：</td>
+            <td class=""><input type="text" class="form-control dateStyle"></td>
+        </tr>
+        <tr>
+            <td class="TextRight borderTop1">附件列表：</td>
+            <td colspan="5" class="borderTop1">
+                <div class="downLoad fl right40">xxxxxxxxxxxxxxxxx.jpg<button class="btn btn-dafult btn-sm"><i class="glyphicon glyphicon-eye-open"></i>预览</button><button class="btn btn-dafult btn-sm two"><i class="glyphicon glyphicon-cloud-download"></i>下载</button></div>
+                <div class="downLoad fl right40">xxxxxxxxxxxxxx.jpg<button class="btn btn-dafult btn-sm"><i class="glyphicon glyphicon-eye-open"></i>预览</button><button class="btn btn-dafult btn-sm two"><i class="glyphicon glyphicon-cloud-download"></i>下载</button></div>
+                <div class="downLoad fl right40">xxxxxxxxxxxxxxxxx.jpg<button class="btn btn-dafult btn-sm"><i class="glyphicon glyphicon-eye-open"></i>预览</button><button class="btn btn-dafult btn-sm two"><i class="glyphicon glyphicon-cloud-download"></i>下载</button></div>
+                <div class="downLoad fl right40">xxxxxxxxxxxxxx.jpg<button class="btn btn-dafult btn-sm"><i class="glyphicon glyphicon-eye-open"></i>预览</button><button class="btn btn-dafult btn-sm two"><i class="glyphicon glyphicon-cloud-download"></i>下载</button></div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+
+<div class="tabBar">
+    <div class="tab-content listTableCon">
+        <table width="100%" border="0" class="table table-bordered table-striped table-hover table_center">
+            <tr>
+                <th rowspan="4" style="background: #f5f5f5!important;">投诉内容</th>
+                <th>工单提交时间</th>
+                <th>订单编号</th>
+                <th>订单时间</th>
+                <th>订单状态</th>
+                <th>订单类型</th>
+                <th>投诉时间</th>
+            </tr>
+            <tr>
+                <td>$!DateTool.format('yyyy-MM-dd HH:mm:ss',$!{complaintInfo.createTime})</td>
+                <td>$!{complaintInfo.orderId}</td>
+                <td>$!DateTool.format('yyyy-MM-dd HH:mm:ss',$!{complaintInfo.orderTime})</td>
+                <td>$!{complaintInfo.orderStatus}</td>
+                <td>$!{complaintInfo.orderStatus}</td>
+                <td>$!DateTool.format('yyyy-MM-dd HH:mm:ss',$!{complaintInfo.createTime})</td>
+	         </tr>
+	         <tr>
+	            <td colspan="6">$!{complaintInfo.complaintText}</td>
+	         </tr>
+        </table>
+    </div>
+</div>
+
+<!--处理过程浏览-->
+<p class="gray spalword" style="" >处理过程浏览</p>
+<div class="tabBar">
+    <div class="tab-content listTableCon">
+        <table width="100%" border="0" class="table table-bordered table-striped table-hover table_center">
+            <tbody>
+                <tr>
+                    <th rowspan="4" style="background: #f5f5f5!important;">追加投诉</th>
+                    <th>追加提交时间</th>
+                    <th>订单编号</th>
+                    <th>订单时间</th>
+                    <th>订单状态</th>
+                    <th>订单类型</th>
+                    <th>投诉时间</th>
+                </tr>
+                <tr>
+                    <td>xxxxxx</td>
+                    <td>xxxx</td>
+                    <td>xxx</td>
+                    <td>xxxx</td>
+                    <td>xxxxx</td>
+                    <td>xxxx</td>
+                </tr>
+                <tr>
+                    <td colspan="6">我在xxxxxxx，xxxxxxx信息，xxxxxx。</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td rowspan="3" style="vertical-align: middle;">处理流程转-1</td>
+                    <td colspan="2">接收时间：xxx</td>
+                    <td colspan="2">处理部门：xxxxxx</td>
+                    <td colspan="2">处理工号：xxxxxx</td>
+                </tr>
+                <tr>
+                    <td colspan="2">处理时间：xxxxxx</td>
+                    <td colspan="2">操作环节：xxxxxx</td>
+                    <td colspan="2">派发局向：xxxxxx</td>
+                </tr>
+                <tr>
+                    <td colspan="6">我在xxxxxxx，xxxxxxx信息，xxxxxx。</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td rowspan="3" style="vertical-align: middle;">处理流程转-2</td>
+                    <td colspan="2">接收时间：xxx</td>
+                    <td colspan="2">处理部门：xxxxxx</td>
+                    <td colspan="2">处理工号：xxxxxx</td>
+                </tr>
+                <tr>
+                    <td colspan="2">处理时间：xxxxxx</td>
+                    <td colspan="2">操作环节：xxxxxx</td>
+                    <td colspan="2">派发局向：xxxxxx</td>
+                </tr>
+                <tr>
+                    <td colspan="6">我在xxxxxxx，xxxxxxx信息，xxxxxx。</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!--提交回复-->
+<div class="tabBar">
+    <ul id="comtent_tab" class="nav nav-tabs addSpal" role="tablist" >
+        <li id="tab_tijiaohuifu"> <a href="#replay1" role="tab" data-toggle="tab">提交回复</a> </li>
+        <li id="tab_zhuanpai" > <a href="#replay2" role="tab" data-toggle="tab">转其他部门处理</a> </li>
+        <li id="tab_xieban" > <a href="#replay3" role="tab" data-toggle="tab">请其他部门协办</a> </li>
+        <li id="tab_jieduanhuifu" > <a href="#replay4" role="tab" data-toggle="tab">阶段回复</a> </li>
+    </ul>
+    <div class="tab-content turnBranchBox">
+        <div id="replay1" class="tab-pane">
+            <div class="turnBranch">
+                <div class="turnBranchRight" style="float: left;">
+                    <p>工单回复内容:</p>
+                    <p><textarea id="replyText" placeholder="请沃易购基地客服核实" class="form-control"></textarea></p>
+                    <p>上传相关凭证或者截图:</p>
+                    <div class="downLoad"><label>文件路径：</label><input type="text" class="form-control"><button class="btn btn-dafult btn-sm"><i class="glyphicon glyphicon-eye-open"></i>预览</button><button class="btn btn-dafult btn-sm two"><i class="glyphicon glyphicon-cloud-upload"></i>上传</button></div>
+                    <div class="downLoad"><label>附件列表：</label><span>xxxxxxx.jpg</span><a href="#" class="green">删除</a> </div>
+                </div>
+                <div class="turnSubmit"><button class="btn btn-primary" onclick="submitReplyComplaintProcessInfo()">工单回复</button></div>
+            </div>
+        </div>
+        <div id="replay2" class="tab-pane active">
+            <div class="turnBranch">
+                <div class="turnBranchRight">
+                    <p>工单回复内容:</p>
+                    <p><textarea placeholder="请沃易购基地客服核实" class="form-control"></textarea></p>
+                    <p>上传相关凭证或者截图:</p>
+                    <div class="downLoad"><label>文件路径：</label><input type="text" class="form-control"><button class="btn btn-dafult btn-sm"><i class="glyphicon glyphicon-eye-open"></i>预览</button><button class="btn btn-dafult btn-sm two"><i class="glyphicon glyphicon-cloud-upload"></i>上传</button></div>
+                    <div class="downLoad"><label>附件列表：</label><span>xxxxxxx.jpg</span><a href="#" class="green">删除</a> </div>
+                </div>
+                <div class="turnBranchLeft">
+                    <p>派发局向</p>
+                    <div class="rightTurn">
+                        <p>待选角色</p>
+                        <div class="rightTurnWOrd">
+                            <ul>
+                                <li class="active">+总部管理员</li>
+                                <ul>
+                                    <li>-总部领导</li>
+                                    <li>-总部终端管理员</li>
+                                    <li>-总部渠道管理员</li>
+                                </ul>
+                                <li>+沃易购运营基地</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="centerTurn"><button class="btn btn-default">单个添加</button><button class="btn btn-default">单个移除</button><button class="btn btn-default">全部添加</button><button class="btn btn-default">全部移除</button></div>
+                    <div class="rightTurn">
+                        <p>待选角色</p>
+                        <div class="rightTurnWOrd">
+                            <ul>
+                                <li>总部管理员</li>
+                                <li>沃易购运营基地</li>
+                                <li>基地领导</li>
+                                <li>基地部门经理</li>
+                                <li>基地号卡管理岗</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="turnSubmit"><button class="btn btn-primary">转派</button></div>
+            </div>
+        </div>
+        <div id="replay3" class="tab-pane">33</div>
+        <div id="replay4" class="tab-pane">444</div>
+    </div>
+</div>
+

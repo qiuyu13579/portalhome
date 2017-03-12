@@ -1,0 +1,53 @@
+﻿<!-- 编辑框 -->
+<table class="query" width="100%" border="0" cellspacing="0"
+	cellpadding="0">
+	<tbody>
+	
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>单元格编码：
+			</td>
+			<td><input id="celId" class=" form-control input_w300"
+				type="text" maxlength="15" th:value="${info.celId}" disabled="disabled"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+			<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>单元格文本：
+			</td>
+			<td><input id="celName" class=" form-control input_w300"
+				type="text" maxlength="20" th:value="${info.celName}"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>单元格链接：
+			</td>
+			<td><input id="celUrl" class=" form-control input_w300"
+				type="text" maxlength="40" th:value="${info.celUrl}"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>单元格图标：
+			</td>
+			<td><input id="celImage" class=" form-control input_w300"
+				type="text" maxlength="40" th:value="${info.celImage}"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>展示顺序：
+			</td>
+			<td><input id="celOrder" class=" form-control input_w300"
+				type="text" maxlength="4" th:value="${info.celOrder}"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td colspan="10">
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary"
+						onclick="cellInfoManage.edit();" id="submitBut">保存</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal"
+						id="closeBut">关闭</button>
+				</div>
+			</td>
+		</tr>
+
+	</tbody>
+</table>

@@ -1,0 +1,6 @@
+{
+"com.ai.auth.login.config":"${application.configcenter.login}",
+"com.ai.paas.zookeeper":"${application.configcenter.zkaddress}",
+"com.ai.paas.runmode":"${application.configcenter.runmode}",
+"com.ai.zk.recreate":"false"
+}

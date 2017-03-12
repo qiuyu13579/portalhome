@@ -1,0 +1,87 @@
+	
+
+	<!-- 焦点图 begin -->
+	<div style="" th:fragment="lunbo">
+	
+	<!-- 轮播广告   -->
+	<link type="text/css"  rel="stylesheet" th:href="@{/css/lunbo.css?v=${CSS_VERSION}}">
+    <script th:src="@{/js/lunbo.js?v=${JS_VERSION}}"></script>
+	
+<!-- 	<div style="margin: auto; width: 720px;" th:fragment="lunbo"> -->
+	
+    
+		<div class="FocusPic">
+			<div class="FP_arr_left" id="FS_arr_left_01"></div>
+			<div class="FP_arr_right" id="FS_arr_right_01"></div>
+			<div class="FP_NumList" id="FS_numList_01"></div>
+			<div class="FP_cont" id="FS_Cont_01">
+				<div class="FP_pic">
+					<div>
+						<a href="http://www.5icool.org" target="_blank"><img
+							src="../images/lunbo//aa.jpg" galleryImg="no" alt="测试名称" /></a>
+					</div>
+					<div class="FP_tit_bg"></div>
+					<div class="FP_tit_txt">
+						<a href="http://www.5icool.org" target="_blank">测试名称</a>
+					</div>
+					<div class="FP_tit_ico"></div>
+				</div>
+				<div class="FP_pic">
+					<div>
+						<a href="http://www.5icool.org" target="_blank"><img
+							src="../images/lunbo//a2.jpg" galleryImg="no" alt="广西工信委开会" /></a>
+					</div>
+					<div class="FP_tit_bg"></div>
+					<div class="FP_tit_txt">
+						<a href="http://www.5icool.org" target="_blank">广西工信委开会</a>
+					</div>
+					<div class="FP_tit_ico"></div>
+				</div>
+				<div class="FP_pic">
+					<div>
+						<a href="http://www.5icool.org" target="_blank"><img
+							src="../images/lunbo//a3.jpg" galleryImg="no" alt="测试说明11" /></a>
+					</div>
+					<div class="FP_tit_bg"></div>
+					<div class="FP_tit_txt">
+						<a href="http://www.5icool.org" target="_blank">测试说明1111111</a>
+					</div>
+					<div class="FP_tit_ico"></div>
+				</div>
+				<div class="FP_pic">
+					<div>
+						<a href="http://www.5icool.org" target="_blank"><img
+							src="../images/lunbo//a4.jpg" galleryImg="no" alt="测试说明22" /></a>
+					</div>
+					<div class="FP_tit_bg"></div>
+					<div class="FP_tit_txt">
+						<a href="http://www.5icool.org" target="_blank">测试说明2222222222</a>
+					</div>
+					<div class="FP_tit_ico"></div>
+				</div>
+
+			</div>
+		</div>
+		<script language="javascript" type="text/javascript">
+			var focusScroll_01 = new ScrollPic();
+			focusScroll_01.scrollContId = "FS_Cont_01"; //内容容器ID
+			focusScroll_01.arrLeftId = "FS_arr_left_01";//左箭头ID
+			focusScroll_01.arrRightId = "FS_arr_right_01"; //右箭头ID
+			focusScroll_01.dotListId = "FS_numList_01";//点列表ID
+			focusScroll_01.dotClassName = "";//点className
+			focusScroll_01.dotOnClassName = "selected";//当前点className
+			focusScroll_01.listType = "number";//列表类型(number:数字，其它为空)
+			focusScroll_01.listEvent = "onmouseover"; //切换事件
+			focusScroll_01.frameWidth = 668;//显示框宽度
+			focusScroll_01.pageWidth = 668; //翻页宽度
+			focusScroll_01.upright = false; //垂直滚动
+			focusScroll_01.speed = 10; //移动速度(单位毫秒，越小越快)
+			focusScroll_01.space = 30; //每次移动像素(单位px，越大越快)
+			focusScroll_01.autoPlay = true; //自动播放
+			focusScroll_01.autoPlayTime = 5; //自动播放间隔时间(秒)
+			focusScroll_01.initialize(); //初始化
+		</script>
+		<!-- 焦点图 end -->
+	</div>
+
+

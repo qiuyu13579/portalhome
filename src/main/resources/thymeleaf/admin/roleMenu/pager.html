@@ -1,0 +1,19 @@
+<div th:fragment="pager" class="pagerBar" style="margin-top:0px;" >
+	<script th:src="@{/js-busi/common/pager.js?v=${JS_VERSION}}"></script>
+
+ <span data-toggle="pager" id="pagerId2" th:data-count="${pageInfo.total}" th:data-size="${pageInfo.pageSize}" th:data-currentindex="${pageInfo.pageNum}" ></span>
+	<script th:inline="javascript">
+	//var total = '[[${pageInfo.total}]]';
+	//var pageNum = '[[${pageInfo.pageNum}]]';
+	//var pageSize = '[[${pageInfo.pageSize}]]';
+	//alert("total:"+total+"pageNum:"+pageNum+"pageSize:"+pageSize);
+	    if (typeof pagerClick2 === "undefined") {
+	    	pagerClick2 = function (index) {
+	            alert(index);
+	        }
+	    }
+	    $('#pagerId2').pager({callback: pagerClick2});
+	
+	</script>
+</div>
+

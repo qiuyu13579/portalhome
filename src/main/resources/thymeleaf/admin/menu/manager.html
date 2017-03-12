@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+
+    <!-- 引入模板中head定义的公共js和css等内容 -->
+    <script th:replace="~{admin/common/linkData :: linkData}"></script>
+
+	<script th:src="@{/js-busi/admin/sys/menu.js?v=${JS_VERSION}}"></script>
+
+</head>
+<body>
+
+	<div class="admin_content overflow-hidden">
+
+		<div class="tabBar">
+			<ul class="nav nav-tabs">
+				<li class="active" name="tabBar01"><a href="#">菜单列表</a></li>
+				<li name="tabBar02"><a href="#">失效列表</a></li>
+			</ul>
+			<div class="tab-content listTableCon">
+				<!-- 菜单列表 -->
+				<div class="tabBar01 tab-pane active">
+					<table width="100%" border="0" class="table mt20">
+	                  <tbody>
+	                      <tr>
+	                        <td width="10%" class="R">菜单名称：</td>
+	                        <td><input type="text" id="menuName_sel" class="form-control per90"></td>
+	                        <td width="70%" class="C"><button class="btn btn-default"  onclick="menuManage.initDataList(1,10);">
+	                	<i class="glyphicon glyphicon-search"></i>查询</button></td>
+	                      </tr>
+	                  </tbody>
+	                </table>
+	               <!--  <div class="C mb20">
+	                	<button class="btn btn-default"  onclick="menuManage.initDataList(1,10);">
+	                	<i class="glyphicon glyphicon-search"></i>查询</button>
+	                </div> -->
+					
+					<!-- 展示数据区域 -->
+					<div id="data_list"></div>
+					
+				</div>
+				<!-- 菜单列表 end-->
+
+				<!-- 失效列表 -->
+				<div class="tabBar02 tab-pane">
+				
+					<table width="100%" border="0" class="table mt20">
+	                  <tbody>
+	                      <tr>
+	                        <td width="10%" class="R">菜单名称：</td>
+	                        <td><input type="text" id="menuName_his" class="form-control per90"></td>
+	                        <td width="70%" class="C">
+	                        	<button class="btn btn-default"  onclick="menuManage.initDataHisList(1,10);">
+	                			<i class="glyphicon glyphicon-search"></i>查询</button>
+	                		</td>
+	                      </tr>
+	                  </tbody>
+	                </table>
+	               <!--  <div class="C mb20">
+	                	<button class="btn btn-default"  onclick="menuManage.initDataHisList(1,10);">
+	                	<i class="glyphicon glyphicon-search"></i>查询</button>
+	                </div> -->
+				
+					<!-- 展示数据区域 -->
+					<div id="data_his_list"></div>
+				</div>
+				<!-- 失效列表 end-->
+				
+			</div>
+		</div>
+	</div>
+
+	<!-- 新增菜单 弹出框 -->
+    <div th:replace="~{admin/menu/ject :: ject}"></div>
+
+</body>
+</html>

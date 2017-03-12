@@ -1,0 +1,39 @@
+﻿<!-- 数据展示区 -->
+<table
+	class="table table-bordered table-striped table-hover table_center table_th_center font12 ">
+	<thead>
+     	<tr>
+			<th>单元格编码</th>
+			<th>单元格文本</th>
+			<th>单元格链接</th>
+			<th>单元格图标</th>
+			<th>展示顺序</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="obj : ${pageInfo.list}">
+			<td th:text="${obj.celId}"></td>
+			<td th:text="${obj.celName}"></td>
+			<td th:text="${obj.celUrl}"></td>
+			<td th:text="${obj.celImage}"></td>
+			<td th:text="${obj.celOrder}"></td>
+			<td class="linkBlue2">
+				<a href="javaScript:;"
+				th:onclick="'javascript:cellInfoManage.confirmUpdateStatus('+${obj.celId}+',\'1\');'">生效</a></td>
+		</tr>
+	</tbody>
+</table>
+<div class="overflow-hidden clearfix">
+
+	<!-- 分页 -->
+	<div class="pagerBar">
+		<script>
+			function pagerClick(index) {
+				cellInfoManage.initDataHisList(index,10);
+			}
+		</script>
+		<div th:include="~{admin/common/pager :: pager}"></div>
+	</div>
+	<!-- pagerBar end-->
+</div>

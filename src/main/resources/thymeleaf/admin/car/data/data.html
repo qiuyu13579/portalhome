@@ -1,0 +1,47 @@
+﻿<!-- 数据展示区 -->
+<table
+	class="table table-bordered table-striped table-hover table_center table_th_center font12 ">
+	<thead>
+     	<tr>
+			<th>图片编码</th>
+			<th>图片标题</th>
+			<th>图片源</th>
+			<th>图片链接</th>
+			<th>展示顺序</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="obj : ${pageInfo.list}">
+			<td th:text="${obj.dataId}"></td>
+			<td th:text="${obj.carTitle}"></td>
+			<td th:text="${obj.carImage}"></td>
+			<td th:text="${obj.carUrl}"></td>
+			<td th:text="${obj.carOrder}"></td>
+			<td class="linkBlue2">
+				<a href="javaScript:;"
+				th:onclick="'javascript:carDataManage.showEdit('+${obj.dataId}+');'">编辑</a>
+				| <a href="javaScript:;"
+				th:onclick="'javascript:carDataManage.confirmUpdateStatus('+${obj.dataId}+',\'0\');'">删除</a></td>
+		</tr>
+	</tbody>
+</table>
+<div class="overflow-hidden clearfix">
+	<div class="fl">
+		<button class="btn btn-primary btn-small"
+			onclick="carDataManage.showAdd();">
+			<i class="glyphicon glyphicon-plus"></i>新增图片
+		</button>
+	</div>
+
+	<!-- 分页 -->
+	<div class="pagerBar">
+		<script>
+			function pagerClick(index) {
+				carDataManage.initDataList(index,10);
+			}
+		</script>
+		<div th:include="~{admin/common/pager :: pager}"></div>
+	</div>
+	<!-- pagerBar end-->
+</div>

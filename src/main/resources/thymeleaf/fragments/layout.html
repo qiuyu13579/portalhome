@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>工作流</title>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!-- 引入模板中head定义的公共js和css等内容 -->
+    <script th:replace="~{fragments/header :: head}"></script>
+</head>
+<body>
+<div class="clearfix wrap">
+    <div th:replace="~{fragments/menu :: menu}">
+        <!--顶部菜单-->
+    </div>
+    <!-- 主内容 -->
+    <div layout:fragment="screen_content">
+        <p>这里是内容</p>
+    </div>
+</div>
+<!--footer-->
+<div th:replace="~{fragments/footer :: footer}" ></div>
+</body>
+</html>

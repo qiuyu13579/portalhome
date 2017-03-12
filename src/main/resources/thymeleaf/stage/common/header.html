@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="head">
+
+  <!-- 头部-->
+    <header>
+      <div class="w980 clearfix">
+          <div class="fl logo C">
+              <a href="#"><img src="../images/logo.png"></a>
+          </div>
+          <div class="fr">
+              <div class="h-nav">
+                    <a href="javascript:void(0);" onclick="SetHome(this,'http://www.gxgyxx.com');">设为首页</a>
+                    <a href="javascript:void(0);" onclick="AddFavorite('广西壮族自治区工业和信息委员会',location.href)">添加收藏</a>
+                    <a href="/portalhome/other/wzdt">网站地图</a>
+                    <a href="#">使用帮助</a>
+              </div>
+              <div class="search-form clearfix">
+                      <input class="search-text fl holder" type="text"  placeholder="热词/关键字">
+                      <button class="search-btn fl">搜索</button>
+                      <a href="/portalhome/home/sousuo" class="advanced ml10 ">高级搜索</a>
+              </div>
+              
+          </div>
+      </div>
+    </header>
+    
+
+    
+    
+</div>
+
+

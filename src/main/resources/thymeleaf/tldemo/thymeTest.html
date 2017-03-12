@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <title>thymeleaf测试页面</title>
+    <!--/*css 实际生成的页面不会使用，使用th:remove="all"处理*/-->
+    <link rel="stylesheet" href="../../static/component/bootstrap/css/bootstrap.min.css" th:remove="all"/>
+    <link rel="stylesheet" href="../../static/css/iconfont/iconfont.css" th:remove="all"/>
+    <link rel="stylesheet" href="../../static/css/base/global.css" th:remove="all"/>
+
+    <!--/*当前页面需要引入的资源文件*/-->
+    <script src="../../static/js-busi/common/pager.js" th:src="@{/js-busi/common/pager.js}"></script>
+</head>
+<body>
+<!-- 主内容 -->
+<div layout:fragment="screen_content">
+    <span>congratulations!</span><br/>
+    <!--/*@thymesVar id="msg" type="String"*/-->
+    <span th:text="${msg}">工作流，这是一个测试页面</span><br/>
+    <span>工作流，这是测试页面</span>
+
+</div>
+</body>
+</html>

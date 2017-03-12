@@ -1,0 +1,115 @@
+#set($layout="layout/layout.vm")
+#parse("sys/sys_param.vm")
+
+<link rel="stylesheet" type="text/css" href="${CSS_PATH}/public/global.css" />
+<link rel="stylesheet" type="text/css" href="${CSS_PATH}/my_walter_tesco.css">
+<link rel="stylesheet" type="text/css" href="${CSS_PATH}/addJobStyle.css">
+
+<script src="${BUSIJS_PATH}/myWokeOrder/wantToComplaintInfo.js?v=${JS_VERSION}" type="text/javascript"></script>
+
+
+<div class="rightWrap">
+	<div class="right_content">
+		<table border="0" class="editTable" style="width:70%!important;margin-left: 20px;">
+		    <tbody>
+		    <tr>
+		        <td class="Hint"><font color="red">*</font>选择供货商：</td>
+		        <td ><a href="#" class="blue" class="blue"  data-target="#myModal01" data-toggle="modal">供货商名称</a></td>
+		    </tr>
+		    <tr>
+		        <td class="Hint"><font color="red">*</font>投诉问题：</td>
+		        <td ><select  id="complaintType"  class="form-control">
+		        	#foreach($complaintTypeInfo in $complaintTypeInfoList)
+			            <option value="$!{complaintTypeInfo.complaintTypeCode}" >$!{complaintTypeInfo.complaintTypeTitle}</option>
+		            #end
+		        </select></td>
+		        <td class="Hint"><font color="red" href="#" >*</font>涉及订单：</td>
+		        <td ><a href="#" class="blue">37283838498540</a> </td>
+		    </tr>
+		    <tr>
+		        <td class="Hint"><font color="red">*</font>投诉内容：</td>
+		        <td colspan="3"><textarea id="complaintText" class="form-control" rows="3" placeholder="限定500字内"></textarea></td>
+		    </tr>
+		    <tr>
+		        <td class="Hint"><font color="red">*</font>上传凭证：</td>
+		        <td colspan="3">
+		            <input class="form-control UploadFile" type="file">
+		            <div class="UploadBox">
+		                <p><i class="upIcin"></i>上传说明</p>
+		                <div class="UploadWord"><i class="crate"></i><i class="crate02"></i>为了能更快更好的解决问题，请您上传与商家沟通的记录图片最多5张，每张图片大小不超过5M </div>
+		            </div>
+		            <ul class="UploadList">
+		                <li><a class="close">x</a><img src="../images/u184.png"></li>
+		                <li><a class="close">x</a><img src="../images/u184.png"></li>
+		                <li><a class="close">x</a><img src="../images/u184.png"></li>
+		            </ul>
+		        </td>
+		    </tr>
+		    <tr>
+		        <td class="Hint"><font color="red">*</font>联系人：</td>
+		        <td ><input id="linkPerson" class="form-control" type="text"></td>
+		    </tr>
+		    <tr>
+		        <td class="Hint"><font color="red">*</font>联系电话：</td>
+		        <td ><input id="linkTel" class="form-control" type="text"></td>
+		    </tr>
+		    <tr>
+		        <td class="Hint">&nbsp;</td>
+		        <td colspan="3"><button class="btn btn-primary" onclick="submitComplaint()" >提交投诉</button><button class="btn btn-default">取消</button></td>
+		    </tr>
+		    </tbody>
+		</table>
+	</div>
+</div>
+
+    <!--投诉对象弹窗-->
+<div class="modal fade" id="myModal01" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">投诉对象</h4>
+            </div>
+            <div class="modal-body">
+                <table border="0" class="editTable" style="margin:0px 10px;">
+                    <tbody>
+                    <tr>
+                        <td class="Hint"><font color="red">*</font>店铺ID：</td>
+                        <td><input type="text" class="form-control" ></td>
+                        <td class="Hint"><font color="red">*</font>店铺名称：</td>
+                        <td><input type="text" class="form-control" ></td>
+                    </tr>
+                    <tr>
+                        <td class="Hint"><font color="red">*</font>店铺类型：</td>
+                        <td><input type="text" class="form-control" ></td>
+                        <td class="Hint"><font color="red">*</font>归属省份：</td>
+                        <td><input type="text" class="form-control" ></td>
+                    </tr>
+                    <tr>
+                        <td class="Hint"><font color="red">*</font>联系人：</td>
+                        <td><input type="text" class="form-control" ></td>
+                        <td class="Hint"><font color="red">*</font>手机：</td>
+                        <td><input type="text" class="form-control" ></td>
+                    </tr>
+                    <tr>
+                        <td class="Hint"><font color="red">*</font>固定电话：</td>
+                        <td><input type="text" class="form-control" ></td>
+                    </tr>
+                    <tr>
+                        <td class="Hint"><font color="red">*</font>通信地址：</td>
+                        <td colspan="3"><input type="text" class="form-control" ></td>
+                    </tr>
+                    <tr>
+                        <td class="Hint"><font color="red">*</font>工作时间：</td>
+                        <td colspan="3"><input type="text" class="form-control" ></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>

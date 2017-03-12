@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head >
+    <script type="text/javascript" src="../../static/js-busi/common/pager.js" th:src="@{/js-busi/common/pager.js}"></script>
+    <link rel="stylesheet" href="../../static/component/bootstrap/css/bootstrap.min.css" th:remove="all"/>
+    <link rel="stylesheet" href="../../static/css/iconfont/iconfont.css" th:remove="all"/>
+    <link rel="stylesheet" href="../../static/css/base/global.css" th:remove="all"/>
+</head>
+<body>
+<!--必须先定义pagerClick点击事件且要在引入pager.html前定义-->
+<div th:fragment="pager" class="pagerBar" style="margin-top:0px;" >
+
+<span data-toggle="pager" id="pagerId" data-count="3" data-size="10"
+      data-currentindex="1" >
+</span>
+        
+<script type="text/javascript" src="../../static/js-busi/common/pager.js" th:src="@{/js-busi/common/pager.js}"></script>
+
+	<script>
+	    if (typeof pagerClick === "undefined") {
+	        pagerClick = function (index) {
+	            alert(index)
+	        }
+	    }
+	    $('#pagerId').pager({callback: pagerClick});
+	
+	</script>
+</div>
+</body>
+</html>

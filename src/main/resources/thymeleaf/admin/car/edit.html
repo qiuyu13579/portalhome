@@ -1,0 +1,52 @@
+﻿<!-- 编辑框 -->
+<table class="query" width="100%" border="0" cellspacing="0"
+	cellpadding="0">
+	<tbody>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>模块编码：
+			</td>
+			<td><input id="carId" class=" form-control input_w300"
+				type="text" maxlength="15" th:value="${info.carId}" disabled="disabled"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>模块名称：
+			</td>
+			<td><input id="carName" class=" form-control input_w300"
+				type="text" maxlength="15" th:value="${info.carName}"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>模块描述：
+			</td>
+			<td><input id="carDesc" class=" form-control input_w300"
+				type="text" maxlength="40" th:value="${info.carDesc}"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>高度：
+			</td>
+			<td><input id="carHight" class=" form-control input_w300"
+				type="text" maxlength="40" th:value="${info.carHight}"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>宽度：
+			</td>
+			<td><input id="carWidth" class=" form-control input_w300"
+				type="text" maxlength="40" th:value="${info.carWidth}"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td colspan="10">
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary"
+						onclick="carManage.editCar();" id="submitBut">保存</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal"
+						id="closeBut">关闭</button>
+				</div>
+			</td>
+		</tr>
+
+	</tbody>
+</table>

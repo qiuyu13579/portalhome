@@ -1,0 +1,46 @@
+﻿<h2>已选角色</h2>
+<div class="role_search">
+     <table width="100%" border="0" class="table">
+       <tbody>
+           <tr>
+             <td width="20%" class="R">角色名称：</td>
+             <td><input type="text" id="roleName_seled" class="form-control per90"></td>
+             <td ><button  class="btn btn-default"  onclick="roleUserManage.initDataList(1,10);">
+             <i class="glyphicon glyphicon-search"></i>查询</button>
+             </td>
+           </tr>
+
+       </tbody>
+     </table>
+ </div>
+ <table class="table table-bordered table-striped table-hover table_center table_th_center font12 ">
+	<thead>
+		<tr>
+			<th>角色编码</th>
+			<th>角色名称</th>
+			<th>展示顺序</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="obj : ${pageInfo.list}">
+			<td th:text="${obj.role.roleId}"></td>
+			<td th:text="${obj.role.roleName}"></td>
+			<td th:text="${obj.role.roleOrder}"></td>
+			<td class="linkBlue2"><a href="javaScript:;"
+				th:onclick="'javascript:roleUserManage.confirmDelStatus('+${obj.ruId}+');'">删除</a></td>
+		</tr>
+	</tbody>
+</table>
+<div class="overflow-hidden clearfix">
+	<!-- 分页 -->
+	<div class="pagerBar">
+		<script>
+			function pagerClick(index) {
+				roleUserManage.initDataList(index,10);
+			}
+		</script>
+		<div th:include="~{admin/common/pager :: pager}"></div>
+	</div>
+	<!-- pagerBar end-->
+</div>

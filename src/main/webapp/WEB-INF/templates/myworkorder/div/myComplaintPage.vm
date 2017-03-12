@@ -1,0 +1,56 @@
+#set($layout="layout/div/layout.vm")
+<script type="text/javascript">
+    $(function(){
+        $(".st_tree").SimpleTree({
+            click:function(a){
+            	var id = $(a).attr("id");
+                if(!$(a).attr("hasChild")){
+                    alert($(a).attr("ref"));
+                }
+            }
+        });
+    });
+
+</script>
+
+<!--我的工单-->
+<div class="rightWrap">
+    <div id="myComplaintTabDiv" class="right_content" >
+		
+	
+	</div>
+</div>
+
+<!--左边树-->
+<div class="left_content">
+    <div class="st_tree">
+        <ul>
+            <li><a href="#" ref="">投诉类型工单</a></li>
+            <ul show="true">
+                <li><a id="daichuli" href="#" ref="">待处理</a></li>
+                <ul show="true">
+                    <li><a href="#" ref="">账号问题(xx张)</a></li>
+                    <li><a href="#" ref="">银商支付</a></li>
+                    <li><a href="#" ref="">物流发货</a></li>
+                </ul>
+                <li><a id="chulizhong" href="#" ref="">处理中</a></li>
+                <ul>
+                    <li><a href="#" ref="">xxxx</a></li>
+                    <li><a href="#" ref="">xxxx</a></li>
+                </ul>
+                <li><a id="yichuli" href="#" ref="">已处理</a></li>
+                <ul>
+                    <li><a href="#" ref="">xxxx</a></li>
+                    <li><a href="#" ref="">xxxx</a></li>
+                </ul>
+                <li><a id="yiwanjie" href="#" ref="">已完结</a></li>
+                <ul>
+                    <li><a href="#" ref="">xxxx</a></li>
+                    <li><a href="#" ref="">xxxx</a></li>
+                </ul>
+            </ul>
+        </ul>
+    </div>
+</div>
+
+                    

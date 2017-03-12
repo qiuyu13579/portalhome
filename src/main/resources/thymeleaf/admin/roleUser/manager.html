@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+
+    <!-- 引入模板中head定义的公共js和css等内容 -->
+    <script th:replace="~{admin/common/linkData :: linkData}"></script>
+
+	<script th:src="@{/js-busi/admin/sys/roleUser.js?v=${JS_VERSION}}"></script>
+
+</head>
+<body>
+	<div class="admin_content overflow-hidden">
+		<!-- 当前模块 -->
+		<div class="module_head role_head clearfix">
+			<input type="hidden" id="userId" th:value="${user.userId}"/>
+			<div class="fl" th:text="'【'+${user.userName}+'】配置角色列表'" >
+			</div>
+			<div class="fr mr10">
+				<button class="btn btn-default btn-sm"
+					onclick="roleUserManage.redictBackUrl();">
+					<i class="glyphicon glyphicon-share-alt"></i>返回
+				</button>
+			</div>
+		</div>
+
+		<div class="module_body role_body clearfix">
+
+			<table class="role_table">
+				<tr>
+					<td width="50%" class="td">
+						<!-- 已选列表 -->
+						<div class="box" id="data_list"></div> <!-- 已选列表 end-->
+					</td>
+					<td width="50%" class="td">
+						<!-- 待选列表 -->
+						<div class="box" id="data_sel"></div> <!-- 待选列表 end-->
+					</td>
+				</tr>
+			</table>
+
+		</div>
+	</div>
+	
+	<!-- 新增角色 弹出框 -->
+    <div th:replace="~{admin/roleUser/ject :: ject}"></div>
+</body>
+</html>

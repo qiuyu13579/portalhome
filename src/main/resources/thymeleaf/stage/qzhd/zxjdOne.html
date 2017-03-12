@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{stage/common/layout}">
+
+<head>
+
+</head>
+<body>
+	<div layout:fragment="screen_content">
+		<!--当前位置-->
+		<div th:replace="~{stage/common/location :: location}"></div>
+
+		<section class="w980 overflow-hidden">
+			<!-- 左边 -->
+			<aside class="left-aside fl whiteBg">
+				<!-- 树形菜单 -->
+				<div th:replace="~{stage/qzhd/common/menu :: menu}"></div>
+			</aside>
+			<!-- 左边 end-->
+
+			<!-- 右边 -->
+			<div class="main-con fl whiteBg">
+				<div class="content-box">
+
+					<dl class="answer_view">
+						<dt>问 题</dt>
+						<dd>
+							<table width="100%" border="0" class="table">
+								<tbody>
+									<tr>
+										<td class="R color-888" width="15%">提 问 人：</td>
+										<td width="25%">张三</td>
+										<td class="R color-888">提问时间：</td>
+										<td>2017年1月1日 12：23:20</td>
+									</tr>
+									<tr>
+										<td class="R color-888">留言标题：</td>
+										<td colspan="3" class="color-blue font14">问题标题XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</td>
+									</tr>
+									<tr>
+										<td class="R color-888">咨询描述：</td>
+										<td colspan="3">
+											<div class="txt">
+												内容描述语很长内容描述语很长很长陈内容描述语很长很长陈内容描述XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX很长陈语很长很长陈内容描述语很长很长陈内容描述语很长很长陈内容描述语很长很长陈内容描述语很长很长陈内容描述语很长很长陈内容描述语很长很长陈内容描述内容描述语很长很长陈内容描述语很长很长陈内容描述
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</dd>
+					</dl>
+
+					<dl class="answer_view">
+						<dt>答 复</dt>
+						<dd>
+							<table width="100%" border="0" class="table">
+								<tbody>
+									<tr>
+										<td class="R color-888" width="15%">答复部门：</td>
+										<td width="25%">XXX部</td>
+										<td class="R color-888">答复时间：</td>
+										<td>2017年1月1日 12：23:20</td>
+									</tr>
+									<tr>
+										<td class="R color-888">答复内容：</td>
+										<td colspan="3">
+											<div class="txt">
+												内容描述语很长内容描述语很长很长陈内容描述语很长很长陈内容描述XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX很长陈语很长很长陈内容描述语很长很长陈内容描述语很长很长陈内容描述语很长很长陈内容描述语很长很长陈内容描述语很长很长陈内容描述语很长很长陈内容描述内容描述语很长很长陈内容描述语很长很长陈内容描述
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</dd>
+					</dl>
+
+					<div class="text-bom overflow-hidden clearfix mt30 mb10">
+						<div class="B fr">
+							<a href="#">【打印本页】</a> <a href="#">【关闭窗口】</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- 右边 end-->
+		</section>
+
+
+
+	</div>
+
+</body>
+</html>

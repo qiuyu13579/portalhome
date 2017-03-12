@@ -1,0 +1,46 @@
+﻿<h2>已选文章</h2>
+<div class="role_search">
+     <table width="100%" border="0" class="table">
+       <tbody>
+           <tr>
+             <td width="20%" class="R">文章名称：</td>
+             <td><input type="text" id="artName_seled" class="form-control per90"></td>
+             <td ><button  class="btn btn-default"  onclick="groupArticleManage.initDataList(1,10);">
+             <i class="glyphicon glyphicon-search"></i>查询</button>
+             </td>
+           </tr>
+
+       </tbody>
+     </table>
+ </div>
+ <table class="table table-bordered table-striped table-hover table_center table_th_center font12 ">
+     <thead>
+     	<tr>
+			<th>文章编码</th>
+			<th>文章名称</th>
+			<th>展示顺序</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="obj : ${pageInfo.list}">
+			<td th:text="${obj.articleInfo.artId}"></td>
+			<td th:text="${obj.articleInfo.artName}"></td>
+			<td th:text="${obj.gcOrder}"></td>
+			<td class="linkBlue2"><a href="javaScript:;"
+				th:onclick="'javascript:groupArticleManage.confirmDelStatus('+${obj.gcId}+');'">删除</a></td>
+		</tr>
+	</tbody>
+ </table>
+ 
+ 
+ <!-- 分页 -->
+<div class="pagerBar">
+	<script>
+	function pagerClick(index) {
+		groupArticleManage.initDataList(index,10);
+	}
+	</script>
+	<div th:include="~{admin/common/pager :: pager}"></div>
+</div>
+<!-- pagerBar end-->

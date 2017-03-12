@@ -1,0 +1,145 @@
+###################################################################
+# 工作流工程配置文件，使用yaml语言描述
+# yaml多环境配置，要启用其他环境，例如测试环境启动命令如下：
+#   java -jar woego-activiti-1.0.jar --spring.profiles.active=test
+###################################################################
+spring:
+  profiles:
+    active: dev
+
+## spring velocity settings
+#  velocity:
+#    # 不使用spring.velocity中默认定义的velocityViewResolver，取值只能是false
+#    enabled: false
+#    charset: utf-8
+#    cache: false
+#    toolbox-config-location: /WEB-INF/toolbox.xml
+#    resource-loader-path: /WEB-INF/templates/
+  mvc:
+    static-path-pattern: /**
+
+# thymeleaf 模板配置
+  thymeleaf:
+    enabled: true
+    cache: false
+    check-template-location: true
+    suffix: .html
+    prefix: classpath:/thymeleaf/
+    encoding: UTF-8
+    mode: HTML5
+    template-resolver-order: 0
+
+# Spring datasource settings
+  datasource:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      url: jdbc:sqlserver://10.37.242.119:1433;DatabaseName=master
+      username: sa
+      password: 123456
+      #driverClassName: oracle.jdbc.driver.OracleDriver
+      #url: jdbc:oracle:thin:@132.37.2.163:8899:devdb1
+      #username: DEVWFAPP1O
+      #password: DEVWFAPP1O
+      initial-size: 5
+      min-idle: 5
+      max-active: 100
+      max-wait: 30000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+
+##############################
+# logger settings 默认logback
+##############################
+logging:
+  level:
+    # 自定义不同类的日志级别
+    com.ai.portalhome.dao: debug
+    com.ai.portalhome.servicetask: debug
+    com.ai.portalhome.web: debug
+    com.ai.portalhome.rest: debug
+    root: info
+  # 日志文件路径，默认日志名为：spring.log
+  #file: woego-activiti.log
+
+###############################
+# security settings
+###############################
+security:
+  basic:
+    enabled: true
+  headers:
+    xss: true
+
+##############################
+# Server settings
+##############################
+server:
+  port: 8081
+  context-path: /portalhome
+
+##############################
+# 应用程序自定义配置项
+##############################
+application:
+  name: portalhome
+  version: 1.0-SNAPSHOT
+  owner: yubo5
+  environment: develop
+  configcenter:
+    zkaddress: 127.0.0.1:2181
+    login: admin:admin
+    runmode: D
+
+dubbo:
+  registry:
+    address: 127.0.0.1:2181
+  monitor:
+    address: 127.0.0.1:2181
+  provider:
+    group:
+      groupid: devGroup
+  consumer:
+    group:
+      woego-group: devGroup
+      goods-group: devGroup
+      report-group: devGroup
+      chnl-group: devGroup
+      aip-group: devGroup
+      mes-group: devGroup
+      mp-group: devGroup
+
+---
+###################################################################
+# 开发环境配置
+###################################################################
+###############################
+# spring 配置
+###############################
+spring:
+  profiles: dev
+
+---
+###################################################################
+# 测试环境配置
+###################################################################
+###############################
+# spring 配置
+###############################
+spring:
+  profiles: test
+
+---
+###################################################################
+# 生产环境配置，prod
+# 启动参数：--spring.profiles.active=prod
+#           --spring.datasource.password=prod_password
+###################################################################
+###############################
+# spring 配置
+###############################
+spring:
+  profiles: prod

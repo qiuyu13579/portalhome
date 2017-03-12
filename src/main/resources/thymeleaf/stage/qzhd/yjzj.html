@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{stage/common/layout}">
+
+<head>
+
+</head>
+<body>
+	<div layout:fragment="screen_content">
+		<!--当前位置-->
+		<div th:replace="~{stage/common/location :: location}"></div>
+
+		<section class="w980 overflow-hidden">
+			<!-- 左边 -->
+			<aside class="left-aside fl whiteBg">
+				<!-- 树形菜单 -->
+				<div th:replace="~{stage/qzhd/common/menu :: menu}"></div>
+			</aside>
+			<!-- 左边 end-->
+
+			<!-- 右边 -->
+			<div class="main-con fl whiteBg">
+				<div class="content-box2">
+
+					<div class="tabBar">
+						<ul class="nav nav-tabs" role="tablist">
+							<li class="active"><a href="#tabBar01" role="tab"
+								data-toggle="tab">当前征集</a></li>
+							<li><a href="#tabBar02" role="tab" data-toggle="tab">历史征集</a>
+							</li>
+						</ul>
+						<div class="tab-content listTableCon">
+							<!-- 当前征集 -->
+							<div id="tabBar01" class="tab-pane active">
+
+								<div class="list-news list clearfix">
+									<ul>
+										<li><a href="/portalhome/qzhd/yjzjOne"> <span class="w1">本委动态文章标题动态文章标题动态文章标题动态文章标题动态文章标题动态文章标题动态文章标题</span>
+												<span class="w2">2014-07-27</span>
+										</a></li>
+										<li><a href="/portalhome/qzhd/yjzjOne"> <span class="w1">本委动态文章标题</span> <span
+												class="w2">2014-07-27</span>
+										</a></li>
+										<li><a href="/portalhome/qzhd/yjzjOne"> <span class="w1">本委动态文章标题</span> <span
+												class="w2">2014-07-27</span>
+										</a></li>
+										<li><a href="/portalhome/qzhd/yjzjOne"> <span class="w1">本委动态文章标题</span> <span
+												class="w2">2014-07-27</span>
+										</a></li>
+										<li><a href="/portalhome/qzhd/yjzjOne"> <span class="w1">本委动态文章标题</span> <span
+												class="w2">2014-07-27</span>
+										</a></li>
+										<li><a href="/portalhome/qzhd/yjzjOne"> <span class="w1">本委动态文章标题</span> <span
+												class="w2">2014-07-27</span>
+										</a></li>
+										<li><a href="/portalhome/qzhd/yjzjOne"> <span class="w1">本委动态文章标题</span> <span
+												class="w2">2014-07-27</span>
+										</a></li>
+										<li><a href="/portalhome/qzhd/yjzjOne"> <span class="w1">本委动态文章标题</span> <span
+												class="w2">2014-07-27</span>
+										</a></li>
+										<li><a href="/portalhome/qzhd/yjzjOne"> <span class="w1">本委动态文章标题</span> <span
+												class="w2">2014-07-27</span>
+										</a></li>
+										<li><a href="/portalhome/qzhd/yjzjOne"> <span class="w1">本委动态文章标题</span> <span
+												class="w2">2014-07-27</span>
+										</a></li>
+									</ul>
+								</div>
+
+								<div class="pagerBar">
+									<div class="fr ml10 jump">
+										到第 <input type="text" value="1">页&nbsp;
+										<button>确定</button>
+									</div>
+									<ul class="pages">
+										<li class="pgNext">首页</li>
+										<li class="pgNext">上一页</li>
+										<li class="page-number">1</li>
+										<li class="page-number current">2</li>
+										<li class="page-number">3</li>
+										<li class="page-number pgCurrent">4</li>
+										<li class="page-number">5</li>
+										<li class="page-number">6</li>
+										<li class="page-number">7</li>
+										<li class="pgNext">下一页</li>
+										<li class="pgNext">末页</li>
+									</ul>
+								</div>
+
+							</div>
+							<!-- 当前征集 end-->
+
+							<!-- 历史征集 -->
+							<div id="tabBar02" class="tab-pane">22</div>
+							<!-- 历史征集 end-->
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- 右边 end-->
+		</section>
+	</div>
+</body>
+</html>

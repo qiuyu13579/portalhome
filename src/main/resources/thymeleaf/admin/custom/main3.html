@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+
+<!-- 引入模板中head定义的公共js和css等内容 -->
+<script th:replace="~{admin/common/linkData :: linkData}"></script> 
+
+<link type="text/css" rel="stylesheet" th:href="@{/custom/css/bootstrap.min.css}">
+<link type="text/css" rel="stylesheet" th:href="@{/custom/css/font-awesome.4.6.0.css}">
+<link type="text/css" rel="stylesheet" th:href="@{/custom/dist/gridstack.css}">
+<link type="text/css" rel="stylesheet" th:href="@{/custom/css/default.css}"> 
+
+<script th:src="@{/custom/js/jquery.1.1min.js?v=${JS_VERSION}}"></script>
+<script th:src="@{/custom/js/jquery-ui.min.js?v=${JS_VERSION}}"></script>
+<script th:src="@{/custom/js/bootstrap.min.js?v=${JS_VERSION}}"></script>
+<script th:src="@{/custom/js/lodash.min.js?v=${JS_VERSION}}"></script>
+<script th:src="@{/custom/dist/gridstack.js?v=${JS_VERSION}}"></script> 
+
+
+<style type="text/css">
+.grid-stack {
+	background: lightgoldenrodyellow;
+}
+
+.grid-stack-item-content {
+	color: #2c3e50;
+	text-align: center;
+	background-color: #18bc9c;
+}
+</style>
+<!--[if IE]>
+		<script src="http://libs.baidu.com/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+
+<script type="text/javascript">
+
+var data_base;
+var data_new;
+
+	$(function() {
+		
+
+		customMg.init();//初始化界面数据
+		
+
+		//new function() {
+			
+		//};
+	});
+	
+	
+var customMg = {
+			
+	/**
+	* 加载所有模块数据
+	**/
+	init : function(){
+		
+		var options = {
+			float : true
+		};
+		$('.grid-stack').gridstack(options);
+		
+		$('#add-new-widget').click(customMg.add_new_widget);
+		$('#save_new_widget').click(customMg.save_new_widget);
+		
+		
+		//模拟从数据读取的数据，拼装不同模块的数据
+		customMg.queryDataToShow();
+	},
+	/**
+	**增加一个模块
+	**/
+	add_new_widget : function(){
+		var items = [
+						{x : 0,y : 0,width : 0,height : 2} 
+					];
+		var grid = $('.grid-stack').data('gridstack');
+		var node = items.pop() || {x : 1,y : 1,width : 1,height : 1};
+		grid.add_widget($('<div><div class="grid-stack-item-content" /><div/>'),
+									node.x, node.y, node.width, node.height);
+		
+	},
+	/**
+	**保存模块
+	**/
+	save_new_widget : function(){
+		
+		var data=new Array();
+		
+		//$(".grid-stack-item ui-draggable ui-resizable ui-resizable-autohide").each(function(){
+		$(".ui-resizable-autohide").each(function(){
+			var obj = $(this);
+			
+			var el = new Object();
+			el.x = obj.attr("data-gs-x");
+			el.y = obj.attr("data-gs-y");
+			el.width = obj.attr("data-gs-width");
+			el.height = obj.attr("data-gs-height");
+			
+			
+			var myDiv = $(this).children('.grid-stack-item-content');
+			//
+			//alert(myDiv);
+			el.modeId = myDiv.attr("modeId");
+			
+			data.push(el);
+			
+			//alert(data.length);
+		  });
+		
+		data_new = data;
+		
+		//alert("开始还原");
+		
+		customMg.queryDataToShow();//初始化界面数据
+		
+		
+		alert("开始预览");
+		data_base = data_new;
+		
+		customMg.queryDataToShow();//初始化界面数据
+	},
+	/**
+	** 从数据库获取配置数据
+	**/
+	queryDataToShow : function(){
+		
+		$("#showDIV").html("");//清除内容
+		
+		
+		var grid = $('.grid-stack').data('gridstack');
+		
+		var data = [
+		    {x : 0,y : 0,width : 3,height : 5,modeId:1},
+		    {x : 3,y : 0,width : 3,height : 5,modeId:2},
+		    
+		    {x : 0,y : 5,width : 2,height : 10,modeId:3},
+		    {x : 2,y : 5,width : 4,height : 10,modeId:4},
+		    
+		   /*  
+		    
+		    {x : 3,y : 5,width : 6,height : 5,modeId:5},
+		    {x : 3,y : 10,width : 3,height : 5,modeId:6},
+		    {x : 6,y : 10,width : 3,height : 5,modeId:7} 
+		   */
+		            ];
+		if(data_base == null){
+			data_base = data;
+		}else{
+			data = data_base;
+		}
+		
+		for (var i=0;i<data.length;i++)
+		{
+			var node = data[i];
+			
+			var css_stype = 'width: 423px; height: 138px;';
+			//var css_stype = 'style="width: 423px; height: 138px;"';
+			//var css_stype = 'style="position: absolute; top: 210px; left: 292.5px; width: 423px; height: 138px;"';
+			
+			var div_html = '<div><div class="grid-stack-item-content" modeId="'+node.modeId+'">模块名称'+node.modeId+'</div><div/>';
+			
+			if(i == 5){
+				div_html = '<div><div class="grid-stack-item-content"  modeId="'+node.modeId+'">模块名称'+node.modeId+'特殊样式</div><div/>';
+				
+				grid.add_widget($(div_html),node.x, node.y, node.width, node.height);
+			}else{
+				grid.add_widget($(div_html),node.x, node.y, node.width, node.height);
+			}
+			
+			
+			
+			
+			
+			//document.write(cars[i] + "<br>");
+		}
+		
+	}
+	
+	
+	
+	/* queryGdsBrands :function(catId){
+		$("#s_brand").empty();
+		$("#s_brand").append('<option value="">全部</option>');
+		if(catId === ""){
+			$("#s_model").empty();
+			$("#s_model").append('<option value="">全部</option>');
+			return;
+		}			
+		jQuery.ajax({
+	       url: basePath+"/gift/queryGdsBrands",
+	       data: {"catId":catId},
+	       dataType : 'text',
+	       success: function(data){
+		   		var jsonObj = jQuery.parseJSON(data);
+		   		if(jsonObj.success == "true"){
+		   			
+					jQuery.each(jsonObj.object, function(i, n){
+						//alert(n.brandId);
+						$("#s_brand").append('<option value=' + n.brandId + ' ' + '>' + n.brandName + '</option>');
+					});
+					$("#s_brand").val("$!condition.brandId");
+				} else {
+					alert(jsonObj.msg);
+				}
+		   }
+	     });
+	}	 */
+	
+	
+}
+	
+</script>
+
+</head>
+<body>
+	<div class="jq22-container">
+		<div class="jq22-content bgcolor-3">
+			<div class="container-fluid">
+
+				<div>
+					<a class="btn btn-default" id="add-new-widget" href="#">增加DIV</a>
+					<a class="btn btn-default" id="save_new_widget" href="#">保存</a>
+				</div>
+
+				<br />
+
+				<div class="grid-stack" id="showDIV"></div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

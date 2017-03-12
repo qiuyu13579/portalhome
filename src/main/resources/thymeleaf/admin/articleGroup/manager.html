@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+
+    <!-- 引入模板中head定义的公共js和css等内容 -->
+    <script th:replace="~{admin/common/linkData :: linkData}"></script>
+    
+	<script th:src="@{/js-busi/admin/sys/articleGroup.js?v=${JS_VERSION}}"></script>
+
+</head>
+<body>
+	<input type="hidden" id="olId" th:value="${olId}" /> 
+	<div class="admin_content overflow-hidden">
+
+		<div class="tabBar">
+			<ul class="nav nav-tabs">
+				<li class="active" name="tabBar01"><a href="#">文章分组列表</a></li>
+				<li name="tabBar02"><a href="#">失效列表</a></li>
+			</ul>
+			<div class="tab-content listTableCon">
+				<!-- 文章分组列表 -->
+				<div class="tabBar01 tab-pane active">
+				
+					<table width="100%" border="0" class="table mt20">
+	                  <tbody>
+	                      <tr>
+	                        <td width="10%" class="R">文章分组名称:</td>
+	                        <td><input type="text" id="groupName_sel" class="form-control per90"></td>
+	                        <td width="60%" class="C">
+	                        	<button class="btn btn-default"  onclick="articleGroupManage.initDataList(1,10);">
+	                			<i class="glyphicon glyphicon-search"></i>查询</button>
+	                		</td>
+	                      </tr>
+	                  </tbody>
+	                </table>
+				
+					<!-- 展示数据区域 -->
+					<div id="data_list"></div>
+					
+				</div>
+				<!-- 文章分组列表 end-->
+
+				<!-- 失效列表 -->
+				<div class="tabBar02 tab-pane">
+				
+					<table width="100%" border="0" class="table mt20">
+	                  <tbody>
+	                      <tr>
+	                        <td width="10%" class="R">文章分组名称:</td>
+	                        <td><input type="text" id="groupName_his" class="form-control per90"></td>
+	                        <td width="60%" class="C">
+	                        	<button class="btn btn-default"  onclick="articleGroupManage.initDataHisList(1,10);">
+	                			<i class="glyphicon glyphicon-search"></i>查询</button>
+	                		</td>
+	                      </tr>
+	                  </tbody>
+	                </table>
+				
+					<!-- 展示数据区域 -->
+					<div id="data_his_list"></div>
+				</div>
+				<!-- 失效列表 end-->
+				
+			</div>
+		</div>
+	</div>
+
+	<!-- 新增文章分组 弹出框 -->
+    <div th:replace="~{admin/articleGroup/ject :: ject}"></div>
+
+</body>
+</html>

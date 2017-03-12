@@ -1,0 +1,52 @@
+
+<!--左边导航-->
+<div th:fragment="menu">
+
+    <!-- 导航 -->
+    <div class="head-nav">
+        <div class="nav-up">
+          <div class="nav-inner">
+            <div class="nav-v3">
+              <ul>
+                  <li class="nav-up-inpage" h_nav="home"><a href="/portalhome/home/index">首页</a></li>
+                  
+                  <li th:each="obj : ${list}"  th:h_nav="'menu'+${obj.menu.menuId}">
+						<a th:href="@{${obj.menu.menuUrl}}" th:text="${obj.menu.menuName}">菜单名称</a>
+				  </li>
+                  
+                  <!-- <li h_nav="info"><a href="/portalhome/xxgk/xxgk">信息公开</a></li>
+                  <li h_nav="economics"><a href="/portalhome/wsbs/bsdt">网上办事</a></li>
+                  <li h_nav="plan"><a href="/portalhome/xxgk/xxgk">工业规划</a></li>
+                  <li h_nav="green"><a href="/portalhome/xxgk/xxgk">绿色发展</a></li>
+                  <li h_nav="park"><a href="/portalhome/xxgk/xxgk">工业园区</a> </li>
+                  <li h_nav="radio"><a href="/portalhome/xxgk/xxgk">无线电管理</a> </li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="nav-down">
+				  
+			<div th:each="obj,objStat : ${list}" class="nav-down-menu" style="display: none;" 
+				th:id="'menu'+${obj.menu.menuId}" th:h_nav="'menu'+${obj.menu.menuId}">
+				
+                <div class="nav-down-inner">
+                  <dl th:style="'margin-left: '+(150+${objStat.index}*50)+'px;'">
+                    <dd>
+                    
+                    	<a th:each="next : ${obj.nextList}" th:href="@{${next.menu.menuUrl}}" th:text="${next.menu.menuName}">下级菜单名称</a>
+                    	 
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+              
+
+              
+              
+        </div>
+    </div>
+    <!-- 导航 end-->
+    
+</div>
+
+

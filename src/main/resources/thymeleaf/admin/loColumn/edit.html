@@ -1,0 +1,56 @@
+﻿<!-- 编辑框 -->
+<table class="query" width="100%" border="0" cellspacing="0"
+	cellpadding="0">
+	<tbody>
+	
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>栏目编码：
+			</td>
+			<td><input id="colId" class=" form-control input_w300"
+				type="text" maxlength="15" th:value="${info.colId}" disabled="disabled"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>栏目标题：
+			</td>
+			<td><input id="colTitle" class=" form-control input_w300"
+				type="text" maxlength="20" th:value="${info.colTitle}"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>栏目说明：
+			</td>
+			<td><input id="colDesc" class=" form-control input_w300"
+				type="text" maxlength="40" th:value="${info.colTitle}"><br /> <span
+				class="color-red pl5"></span></td>
+		</tr>
+		<tr>
+			<td class="Hint" width="30%"><span class="color-red">*</span>类目类型：
+			</td>
+			<td>
+				<input type="hidden" id="colType_" th:value="${ol.colType}" />
+				<select class="form-control" id="colType" onchange="loColumn.changeTowhow();">
+                      <option value="" >-请选择-</option>                               
+                      <option value="01">轮播</option>                               
+                      <option value="02">图片</option>                               
+                      <option value="03">文章</option>                               
+                      <option value="04">文章列表</option>                               
+                      <option value="05">单元格列表</option>                               
+                      <option value="06">文本列表</option>                               
+                      <option value="20">指定界面</option>                               
+              	</select>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="10">
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary"
+						onclick="loColumnManage.edit();" id="submitBut">保存</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal"
+						id="closeBut">关闭</button>
+				</div>
+			</td>
+		</tr>
+
+	</tbody>
+</table>

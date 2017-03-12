@@ -1,0 +1,33 @@
+<div th:fragment="linkFile">
+
+    <!--/*css 实际生成的页面不会使用，使用th:remove="all"处理*/-->
+    <link rel="stylesheet" href="../../static/component/bootstrap/css/bootstrap.min.css" th:remove="all"/>
+    <link rel="stylesheet" href="../../static/css/iconfont/iconfont.css" th:remove="all"/>
+    <link rel="stylesheet" href="../../static/css/base/global.css" th:remove="all"/>
+
+    <script src="../../static/js/jquery-2.2.0.min.js" th:remove="all"></script>
+    <script src="../../static/component/bootstrap/js/bootstrap.min.js" th:remove="all"></script>
+    <script type="text/javascript" th:remove="all">
+        var WEB_ROOT = '[[${#httpServletRequest.contextPath}]]';
+        //toolTip
+        $(function () {
+            initPopover();
+        });
+        function initPopover(){
+            $('[data-toggle="popover"]').popover({
+                placement:"auto top"
+            });
+        }
+    </script>
+
+    <link rel="stylesheet" href="../../static/component/fileinput/css/fileinput.min.css" type="text/css" media="all" th:href="@{/component/fileinput/css/fileinput.min.css}"/>
+    <script src="../../static/component/fileinput/js/fileinput.min.js" th:src="@{/component/fileinput/js/fileinput.min.js}"></script>
+    <script src="../../static/component/fileinput/themes/fa/theme.js" th:src="@{/component/fileinput/themes/fa/theme.js}"></script>
+    <script src="../../static/component/fileinput/js/locales/zh.js" th:src="@{/component/fileinput/js/locales/zh.js}"></script>
+
+
+<!--     <script src="../../static/js-busi/common/image.service.js" th:src="@{/js-busi/common/image.service.js}"></script>
+  -->
+
+</div>
+

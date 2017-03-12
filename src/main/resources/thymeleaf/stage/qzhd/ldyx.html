@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{stage/common/layout}">
+
+<head>
+
+
+<style type="text/css">
+</style>
+
+</head>
+<body>
+	<div layout:fragment="screen_content">
+		<!--当前位置-->
+		<div th:replace="~{stage/common/location :: location}"></div>
+
+		<section class="w980 overflow-hidden">
+			<!-- 左边 -->
+			<aside class="left-aside fl whiteBg">
+				<!-- 树形菜单 -->
+				<div th:replace="~{stage/qzhd/common/menu :: menu}"></div>
+			</aside>
+			<!-- 左边 end-->
+
+			<!-- 右边 -->
+			<div class="main-con fl whiteBg">
+				<div class="content-box2 overflow-hidden">
+
+					<div class="answer-title">
+						<em>发件人信息</em>
+					</div>
+					<table width="100%" border="0" class="table answer mid">
+						<tbody>
+							<tr>
+								<td width="15%" class="R"><span class="color-red">*</span>收件领导：</td>
+								<td colspan="3"><input type="text" name=""
+									class="form-control w150"></td>
+							</tr>
+							<tr>
+								<td class="R"><span class="color-red">*</span>本人邮箱：</td>
+								<td><input type="email" name="" class="form-control w150"></td>
+								<td width="15%" class="R"><span class="color-red">*</span>手机号码：</td>
+								<td width="40%"><input type="tel" name=""
+									class="form-control"></td>
+							</tr>
+							<tr>
+								<td width="15%" class="R"><span class="color-red">*</span>您的姓名：</td>
+								<td colspan="3"><input type="text" name=""
+									class="form-control w150"></td>
+							</tr>
+							<tr>
+								<td class="R">工作单位：</td>
+								<td colspan="3"><input type="text" name=""
+									class="form-control"></td>
+							</tr>
+							<tr>
+								<td class="R">联系地址：</td>
+								<td colspan="3"><input type="text" name=""
+									class="form-control"></td>
+							</tr>
+							<tr>
+								<td class="R"><span class="color-red">*</span>邮件标题：</td>
+								<td colspan="3"><input type="text" name=""
+									class="form-control"></td>
+							</tr>
+							<tr>
+								<td class="R"><span class="color-red">*</span>邮件内容：</td>
+								<td colspan="3"><textarea rows="5" class="form-control"></textarea></td>
+							</tr>
+							<tr>
+								<td class="R">验证码：</td>
+								<td colspan="3"><input type="text" name=""
+									class="form-control w100"> <span>11111</span> <a
+									href="#">刷新</a></td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="formOperate C mt15">
+						<input type="button" value="提交" class="btn btn-primary"> <input
+							type="button" value="重置" class="btn btn-default">
+					</div>
+
+				</div>
+			</div>
+			<!-- 右边 end-->
+		</section>
+
+	</div>
+</body>
+</html>

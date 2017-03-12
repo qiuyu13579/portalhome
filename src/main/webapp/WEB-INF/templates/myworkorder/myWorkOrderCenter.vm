@@ -1,0 +1,31 @@
+#set($layout="layout/layout.vm")
+#parse("sys/sys_param.vm")
+
+<link rel="stylesheet" type="text/css" href="${CSS_PATH}/public/global.css" />
+<link rel="stylesheet" type="text/css" href="${CSS_PATH}/my_walter_tesco.css">
+<link rel="stylesheet" type="text/css" href="${CSS_PATH}/addJobStyle.css">
+<script src="${BUSIJS_PATH}/myWokeOrder/myWorkOrderCenter.js?v=${JS_VERSION}" type="text/javascript"></script>
+
+<script src="${RESOURCE_PATH}/my_walter_tesco/my_walter_tesco.js"></script>
+<script src="${RESOURCE_PATH}/my_walter_tesco/My97DatePicker/WdatePicker.js"></script>
+<script src="${RESOURCE_PATH}/SimpleTree.js"></script>
+
+<style type="text/css">
+.workFlow .left_content{ width: 20%;}
+.workFlow .right_content{ margin-left: 20%;position: relative;left: -1px;}
+</style>
+
+
+<!-- 主内容 -->
+<div class="tabBar">
+   <ul class="nav nav-tabs" role="tablist" >
+        <li class="active">
+            <a id="mySponsorComplaintTab" href="#tabBar4-1" role="tab" data-toggle="tab" onclick="showMyComplaintPage('sponsorComplaintTabPage')">我发起的投诉工单</a>
+        </li>
+        <li>
+            <a id="myReceiveComplaintTab" href="#tabBar4-2" role="tab" data-toggle="tab" onclick="showMyComplaintPage('receiveComplaintTabPage')">我收到的投诉工单</a>
+        </li>
+    </ul>
+	<div class="tab-content workFlow" id="myWokOrderTableContent">
+	</div>
+</div>

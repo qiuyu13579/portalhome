@@ -1,0 +1,50 @@
+﻿<!-- 数据展示区 -->
+<table
+	class="table table-bordered table-striped table-hover table_center table_th_center font12 ">
+	<thead>
+		<tr>
+			<th>轮播编码</th>
+			<th>轮播名称</th>
+			<th>轮播描述</th>
+			<th>展示高度</th>
+			<th>展示宽度</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="obj : ${pageInfo.list}">
+			<td th:text="${obj.carId}"></td>
+			<td th:text="${obj.carName}"></td>
+			<td th:text="${obj.carDesc}"></td>
+			<td th:text="${obj.carHight}"></td>
+			<td th:text="${obj.carWidth}"></td>
+			<td class="linkBlue2">
+				<a href="javaScript:;"
+				th:onclick="'javascript:carManage.redictCarDataUrl('+${obj.carId}+');'">配置图片</a>
+				| 
+				<a href="javaScript:;"
+				th:onclick="'javascript:carManage.showEdit('+${obj.carId}+');'">编辑</a>
+				| <a href="javaScript:;"
+				th:onclick="'javascript:carManage.confirmUpdateStatus('+${obj.carId}+',\'0\');'">失效</a></td>
+		</tr>
+	</tbody>
+</table>
+<div class="overflow-hidden clearfix">
+	<div class="fl">
+		<button class="btn btn-primary btn-small"
+			onclick="carManage.showAdd();">
+			<i class="glyphicon glyphicon-plus"></i>新增轮播
+		</button>
+	</div>
+
+	<!-- 分页 -->
+	<div class="pagerBar">
+		<script>
+			function pagerClick(index) {
+				carManage.initDataList(index,10);
+			}
+		</script>
+		<div th:include="~{admin/common/pager :: pager}"></div>
+	</div>
+	<!-- pagerBar end-->
+</div>

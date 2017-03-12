@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{stage/common/layout}">
+
+<head>
+
+</head>
+<body>
+	<div layout:fragment="screen_content">
+		<!--当前位置-->
+		<div th:replace="~{stage/common/location :: location}"></div>
+
+		<section class="w980 overflow-hidden">
+			<!-- 左边 -->
+			<aside class="left-aside fl whiteBg">
+				<!-- 树形菜单 -->
+				<div th:replace="~{stage/qzhd/common/menu :: menu}"></div>
+			</aside>
+			<!-- 左边 end-->
+
+			<!-- 右边 -->
+			<div class="main-con fl whiteBg">
+				<div class="content-box overflow-hidden">
+
+					<h2 class="text-title">工业和信息化部关于规范电信服务协议有关事项的通知</h2>
+
+					<!-- 附信息 -->
+					<div class="text-about2 clearfix mb20">
+						<ul>
+							<li><b>征集状态：</b><span>征集进行中 </span><a
+								class="publish_opinion" href="/portalhome/qzhd/yjzjFormAdd">我要发表意见</a></li>
+							<li><b>收到建议：</b><span>12条</span><b>采纳建议：</b>2条</li>
+							<li><b>征集开始时间：</b><span>2017年01月22日</span><b>征集结束时间：</b>2017年01月22日</li>
+						</ul>
+					</div>
+
+					<!-- 正文 -->
+					<div class="text-content">
+						<p>各省、自治区、直辖市通信管理局，各相关电信业务经营者：</p>
+						<p>为规范电信服务，保障电信用户和电信业务经营者的合法权益，现将电信服务协议有关规范性要求通知如下：</p>
+						<p>一、电信业务经营者在开展相关电信业务经营活动时，应本着公平诚信的原则与用户订立电信服务协议，做到用户与电信业务经营者之间权利义务对等。</p>
+						<p>本通知所称的电信服务协议，是指电信业务经营者与用户之间设立、变更、终止电信服务权利义务关系的合同。</p>
+						<p>
+							<img src="../upfiles/1.jpg" width="1920" height="1280" alt="">
+						</p>
+					</div>
+
+					<!-- 底部操作 -->
+					<div class="text-bom overflow-hidden clearfix">
+						<div class="text-down fl">
+							<span class="B">附件下载：</span> <span> <a href="#">文件.zip</a>
+								<a href="#">文件.doc</a>
+							</span>
+						</div>
+						<div class="B fr">
+							<a href="#">【打印本页】</a> <a href="#">【关闭窗口】</a>
+						</div>
+					</div>
+					<!-- 底部操作 end-->
+
+				</div>
+			</div>
+			<!-- 右边 end-->
+		</section>
+
+	</div>
+
+</body>
+</html>

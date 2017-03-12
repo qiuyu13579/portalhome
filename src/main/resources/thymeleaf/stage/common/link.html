@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+<head th:fragment="link">
+
+
+    <link type="text/css"  rel="stylesheet" th:href="@{/css/bootstrap.min.css?v=${CSS_VERSION}}">
+    <link type="text/css"  rel="stylesheet" th:href="@{/css/gxgyxx.css?v=${CSS_VERSION}}">
+    
+    <script th:src="@{/js/jquery.min.js?v=${JS_VERSION}}"></script>
+    <script th:src="@{/js/bootstrap.min.js?v=${JS_VERSION}}"></script>
+    <script th:src="@{/js/jquery.placeholder.js?v=${JS_VERSION}}"></script>
+    <script th:src="@{/js/stage/index.js?v=${JS_VERSION}}"></script>
+    
+    <script th:src="@{/js/gxgyxx.js?v=${JS_VERSION}}"></script>
+    
+    <script th:src="@{/js-busi/stage/menu.js?v=${JS_VERSION}}"></script>
+    
+    
+    <script type="text/javascript">
+        var WEB_ROOT = '[[${#httpServletRequest.contextPath}]]';
+
+    </script>
+    
+</head>
+
+

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{stage/common/layout}">
+
+<head>
+
+</head>
+<body>
+	<div layout:fragment="screen_content">
+		<!--当前位置-->
+		<div th:replace="~{stage/common/location :: location}"></div>
+
+
+<section class="w980 overflow-hidden whiteBg">
+          
+    <div class="cntv_title m10">
+        <h1>访谈标题</h1>
+        <p><span>访谈开始时间： 2017年1月2日</span><span>访谈结束时间： 2017年2月2日</span></p>
+    </div>
+
+    <div class="m10 overflow-hidden mb10">
+        <!-- 左边 -->
+        <div class="left-cntv fl">
+           <h3>嘉宾介绍</h3>
+          <!-- 上下滚动 -->
+          <div class="scroll_wrap">
+            <div id="leftDir" class="btntop">&nbsp;</div>
+            <div id="scrollbox">
+              <div class="scrollcon">
+                <div id="boximg" class="scrollpic">
+                  <ul>
+                    <li>
+                      <a href="#">
+                          <img  src="../upfiles/1.jpg" />
+                          <b>张三</b>
+                          <span>XXXX董事长</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                          <img  src="../upfiles/1.jpg" />
+                          <b>李四</b>
+                          <span>某某某某某某某某某某董事长</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                          <img  src="../upfiles/1.jpg" />
+                          <b>某某</b>
+                          <span>XXXX董事长</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                          <img  src="../upfiles/1.jpg" />
+                          <b>某某</b>
+                          <span>XXXX董事长</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div id="fuzhi" class="scrollpic">&nbsp;</div>
+              </div>
+            </div>
+            <div id="rightDir" class="btnbottom">&nbsp;</div>
+          </div>
+          <script type="text/javascript">
+              var speed = 20;
+              var direction="top";
+              var tab = document.getElementById("scrollbox");
+              var tab1 = document.getElementById("boximg");
+              var tab2 = document.getElementById("fuzhi");
+              var leftDir = document.getElementById("leftDir");
+              var rightDir = document.getElementById("rightDir");
+              tab2.innerHTML = tab1.innerHTML;
+              function marquee(){
+                  switch(direction){
+                      case "top":
+                          if(tab2.offsetHeight - tab.scrollTop <= 0){
+                              tab.scrollTop -= tab1.offsetHeight;
+                          }
+                          else{
+                              tab.scrollTop++;
+                          }
+                      break;
+                      case "bottom":
+                          if(tab.scrollTop <= 0){
+                              tab.scrollTop += tab2.offsetHeight;
+                          }
+                          else{
+                              tab.scrollTop--;
+                          }
+                      break;
+                  }
+              }
+              function changeDirection(dir){
+                 direction = dir;
+              }
+              var timer = setInterval(marquee,speed);
+              tab.onmouseover = function(){clearInterval(timer);};
+              tab.onmouseout = function(){timer = setInterval(marquee,speed);};
+              leftDir.onclick = function(){changeDirection("top");};
+              rightDir.onclick = function(){changeDirection("bottom");};
+          </script>
+          <!-- 上下滚动 end-->
+        </div>
+        <!-- 左边 end-->
+
+        <!-- 右边 -->
+        <div class="main-cntv fl">
+           <h3>互动区</h3>
+           <ul class="vinteract clearfix">
+              <li>
+                  <div class="left fl C"><b>张乐：</b>（主持人）</div>
+                  <div class="right fr">
+                      <p>
+                        近年来，为了加快推进信息通信基础设施的建设，国家先后出台了“‘宽带中国’战略”、“提速降费指导意见”等一系列的文件，这些文件明确了总体建设目标和方向。部里连续五年组织开展宽带专项行动，在相关部门支持和企业大力投资建设下，中国的信息基础设施水平不断提升，截至2016年5月底，我国的固定宽带平均接入速率从2015年底的20.5Mbps，提升到29.5Mbps；光纤到户的用户数达到1.8亿，占我国宽带用户比例的66.4%；
+                      </p>
+                      <p class="time R">[2016-07-25 17:06:54]</p>
+                  </div>
+              </li>
+              <li>
+                  <div class="left fl C"><b>张乐：</b>（主持人）</div>
+
+                  <div class="right fr">
+                      <p>
+                        近年来，为了加快推进信息通信基础设施的建设，国家先后出台了“‘宽带中国’战略”、“提速降费指导意见”等一系列的文件，这些文件明确了总体建设目标和方向。部里连续五年组织开展宽带专项行动，在相关部门支持和企业大力投资建设下，中国的信息基础设施水平不断提升，截至2016年5月底，我国的固定宽带平均接入速率从2015年底的20.5Mbps，提升到29.5Mbps；光纤到户的用户数达到1.8亿，占我国宽带用户比例的66.4%；
+                      </p>
+                      <p class="time R">[2016-07-25 17:06:54]</p>
+                  </div>
+              </li>
+
+           </ul> 
+           <div class="C mb20 mt15"><button class="btn btn-primary " data-target="#ask" data-toggle="modal"><i class="glyphicon glyphicon-edit"></i>在线提问</button></div>
+        </div>
+        <!-- 右边 -->
+    </div>
+
+</section>
+
+<!-- 我要提问 弹出框 -->
+<div class="modal fade" id="ask" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="width:600px">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">提问</h4>
+      </div>
+
+      <div class="modal-body listTableCon font12">
+        <section >
+              <table class="query answer" width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tbody>
+                      <tr>
+                          <td class="Hint" width="20%"><span class="color-red">*</span>您的姓名： </td>
+                          <td>
+                              <input class=" form-control" type="text" >
+                          </td>
+                          <td class="Hint" width="20%"><span class="color-red">*</span>手机号码： </td>
+                          <td>
+                              <input class=" form-control" type="text" >
+                          </td>
+                      </tr>
+                      <tr>
+                          <td class="Hint"><span class="color-red">*</span>问题描述： </td>
+                          <td colspan="3">
+                              <textarea rows="5" class="form-control"></textarea>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td class="Hint">验证码： </td>
+                          <td colspan="3">
+                              <input class=" form-control w100" type="text" >
+                              <span>1111</span>
+                              <a href="#">刷新</a>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </section>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">提交</button>
+        </div>
+
+    </div>
+  </div>
+</div>
+<!-- 我要提问 弹出框 end-->
+
+</div>
+
+  </body>
+</html>

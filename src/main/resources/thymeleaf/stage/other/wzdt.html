@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{stage/common/layout}">
+
+<head>
+
+<script th:src="@{/js/My97DatePicker/WdatePicker.js?v=${JS_VERSION}}"></script>
+
+<style type="text/css">
+</style>
+
+</head>
+
+<body layout:fragment="screen_content">
+
+<!--当前位置-->
+	<div th:replace="~{stage/common/location :: location}"></div>
+	
+<section class="w980 overflow-hidden whiteBg">
+    <div class="content-box overflow-hidden ">
+
+        <dl class="site_map">
+          <dt><span>一级菜单1</span></dt>
+            <dd>
+                <a>二级菜单11</a>
+                <a>二级菜单12</a>
+                <a>二级菜单13</a>
+                <a>二级菜单14</a>
+                <a>二级菜单15</a>
+                <a>二级菜单16</a>
+                <a>二级菜单17</a>
+                <a>二级菜单18</a>
+                <a>二级菜单19</a>
+            </dd>
+        </dl>
+
+        <dl class="site_map">
+          <dt><span>一级菜单2</span></dt>
+            <dd>
+                <a>二级菜单11</a>
+                <a>二级菜单12</a>
+                <a>二级菜单13</a>
+                <a>二级菜单14</a>
+                <a>二级菜单15</a>
+                <a>二级菜单16</a>
+                <a>二级菜单17</a>
+                <a>二级菜单18</a>
+                <a>二级菜单19</a>
+            </dd>
+        </dl>
+
+        <dl class="site_map">
+          <dt><span>一级菜单3</span></dt>
+            <dd>
+                <a>二级菜单11</a>
+                <a>二级菜单12</a>
+                <a>二级菜单13</a>
+            </dd>
+            <dd class="three-level">
+                <a>二级菜单11</a>
+                <div>
+                    <a>三级菜单11</a>
+                    <a>三级菜单11</a>
+                    <a>三级菜单11</a>
+                    <a>三级菜单11</a>
+                    <a>三级菜单11</a>
+                    <a>三级菜单11</a>
+                    <a>三级菜单11</a>
+                    <a>三级菜单11</a>
+                    <a>三级菜单11</a>
+                </div>
+            </dd>
+            <dd>
+                <a>二级菜单11</a>
+                <a>二级菜单12</a>
+            </dd>
+        </dl>
+
+    </div>
+</section>
+
+
+  </body>
+</html>

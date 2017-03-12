@@ -1,0 +1,49 @@
+﻿<!-- 数据展示区 -->
+<table
+	class="table table-bordered table-striped table-hover table_center table_th_center font12 ">
+	<thead>
+     	<tr>
+			<th>文章编码</th>
+			<th>文章标题</th>
+			<th>文章说明</th>
+			<th>文章分类</th>
+			<th>文章来源</th>
+			<th>文章标签</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="obj : ${pageInfo.list}">
+			<td th:text="${obj.artId}"></td>
+			<td th:text="${obj.artName}"></td>
+			<td th:text="${obj.artDesc}"></td>
+			<td th:text="${obj.artClass}"></td>
+			<td th:text="${obj.artSource}"></td>
+			<td th:text="${obj.artLabel}"></td>
+			<td class="linkBlue2">
+				<a href="javaScript:;"
+				th:onclick="'javascript:articleManage.showEdit('+${obj.artId}+');'">编辑</a>
+				| <a href="javaScript:;"
+				th:onclick="'javascript:articleManage.confirmUpdateStatus('+${obj.artId}+',\'0\');'">删除</a></td>
+		</tr>
+	</tbody>
+</table>
+<div class="overflow-hidden clearfix">
+	<div class="fl">
+		<button class="btn btn-primary btn-small"
+			onclick="articleManage.showAdd();">
+			<i class="glyphicon glyphicon-plus"></i>新增文章
+		</button>
+	</div>
+
+	<!-- 分页 -->
+	<div class="pagerBar">
+		<script>
+			function pagerClick(index) {
+				articleManage.initDataList(index,10);
+			}
+		</script>
+		<div th:include="~{admin/common/pager :: pager}"></div>
+	</div>
+	<!-- pagerBar end-->
+</div>

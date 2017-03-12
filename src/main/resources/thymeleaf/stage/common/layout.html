@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<title>广西工信委</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="工信委,广西工信委">
+	<meta name="description" content="广西壮族自治区工业和信息委员会">
+
+	<!--[if lt IE 9]>
+		<script th:src="@{/js/html5shiv.min.js?v=${JS_VERSION}}"></script>
+		<script th:src="@{/js/respond.min.js?v=${JS_VERSION}}"></script>
+    <![endif]-->
+    
+    
+    <!-- 引入模板中head定义的公共js和css等内容-->
+    <script th:replace="~{stage/common/link :: link}"></script>
+     
+    
+</head>
+
+<body >
+<!--  加载读条  -->
+    <div id="ajax-loader" style="cursor: progress; position: fixed; top: -50%; left: -50%; width: 200%; height: 200%; background: #fff; z-index: 10000; overflow: hidden;">
+        <img src="../images/LeaRun_6.3.4/ajax-loader.gif" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto;" />
+    </div>
+
+
+     <!--头部 -->
+    <div th:replace="~{stage/common/header :: head}"></div>
+    
+    <!--导航条 -->
+    <div id="menuDIV" ></div>
+   <!--  <div th:replace="~{stage/common/menu :: menu}"></div> -->
+    
+    <!-- 主内容  -->
+    <div layout:fragment="screen_content">
+        <p>这里是内容</p>
+    </div>
+    
+	<!--footer -->
+	<div th:replace="~{stage/common/footer :: footer}" ></div>
+
+
+</body>
+</html>

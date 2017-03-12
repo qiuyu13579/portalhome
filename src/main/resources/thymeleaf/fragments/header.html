@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <link rel="icon" type="image/x-icon" href="../../static/images/favicon.ico" th:href="@{/images/favicon.ico}">
+    <!-- css -->
+    <link rel="stylesheet" href="../../static/component/bootstrap/css/bootstrap.min.css" th:href="@{/component/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="../../static/css/iconfont/iconfont.css" th:href="@{/css/iconfont/iconfont.css}"/>
+    <link rel="stylesheet" href="../../static/css/base/global.css" th:href="@{/css/base/global.css}"/>
+    <link rel="stylesheet" href="../../static/css/my_walter_tesco.css" th:href="@{/css/my_walter_tesco.css}"/>
+	<link rel="stylesheet" href="../../static/css/addJobStyle.css" th:href="@{/css/addJobStyle.css}"/>
+    
+    <!-- js -->
+    <script src="../../static/js/jquery-1.12.4.min.js" th:src="@{/js/jquery-1.12.4.min.js}"></script>
+    <script src="../../static/js/jquery.velocity.min.js" th:src="@{/js/jquery.velocity.min.js}"></script>
+    <script src="../../static/component/bootstrap/js/bootstrap.min.js" th:src="@{/component/bootstrap/js/bootstrap.min.js}"></script>
+
+	<script src="../../static/js/my_walter_tesco/my_walter_tesco.js" th:src="@{/js/my_walter_tesco/my_walter_tesco.js}"></script>
+	<script src="../../static/js/my_walter_tesco/My97DatePicker/WdatePicker.js" th:src="@{/js/my_walter_tesco/My97DatePicker/WdatePicker.js}"></script>
+	<script src="../../static/js/SimpleTree.js" th:src="@{/js/SimpleTree.js}"></script>
+
+    <script type="text/javascript">
+  		//获取当前网址，如： http://localhost:8083/uimcardprj/share/meun.jsp  
+    	var curWwwPath=window.document.location.href;  
+    	//获取主机地址之后的目录，如： uimcardprj/share/meun.jsp  
+    	var pathName=window.document.location.pathname;  
+    	var pos=curWwwPath.indexOf(pathName);  
+    	//获取带"/"的项目名，如：/uimcardprj  
+    	var projectName=pathName.substring(0,pathName.substr(1).indexOf('/')+1);  
+    
+        var WEB_ROOT = projectName;
+        var pagerPath = WEB_ROOT;
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        });
+    </script>
+    <meta id="global" contextpath="$!{CONTEXT_PATH}" version="$!{JS_VERSION}"/>
+    <script language="javascript">
+        GLOBAL = {
+            WEBROOT:$("#global").attr("contextpath"),
+            VERSION:$("#global").attr("version"),
+            COMSHOP:$("#global").attr("comshoppath")
+        };
+    </script>
+
+    <script language="javascript" src="../../static/js/js/jquery.bootstrap.message.js" th:src="@{/js/js/jquery.bootstrap.message.js}"></script>
+    <script type="text/javascript" src="../../static/js/jquery-blockui/jquery.blockUI.js" th:src="@{/js/jquery-blockui/jquery.blockUI.js}"></script>
+    <link type="text/css" rel="stylesheet" href="../../static/js/frameajax/frameajax.css?v=${JS_VERSION}" th:href="@{/js/frameajax/frameajax.css}"/>
+    <script type="text/javascript" src="../../static/js/frameajax/frameajax.js?v=${JS_VERSION}" th:src="@{/js/frameajax/frameajax.js}"></script>
+    <script type="text/javascript" src="../../static/js/js/util.js?v=${JS_VERSION}" th:src="@{/js/js/util.js}"></script>
+
+</head>
+<body>
+
+</body>
+</html>
